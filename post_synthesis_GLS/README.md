@@ -9,21 +9,34 @@ Tool: EDAPlayground with shell script (run.sh)
 Working Environment: https://edaplayground.com/x/f5Wm
 
 ---
-
-This work is trying to perform post synthesis verification on a synthesized verilog design, which generates a gate level netlist, and the same design is then compared with the functional verification \
-testbench from the rtl design stages, to make sure that after synthesis stage is completed, the netlist that will move onto the PD stage, is functionally correct.
-the same stage additionally also accounts for the timing , using the .sdf (standard textual format for representing delay and timing information such as cell delays, interconnect delays, and timing constraints) files, it helps us answer the question: After considering the real delays of gates and wires, does the circuit still work at the desired clock speed?
+## TIMING AWARE GATE LEVEL SIMULATION / VERIFICATION (POST-SYNTHESIS)
+This work is trying to perform post synthesis verification on a synthesized verilog design, which generates a gate level netlist, and the same design as a netlist, is then simulated using the same functional verification testbench developed during RTL verification, to make sure that after synthesis stage is completed, the netlist before proceeding further in the physical implementation flow, is functionally correct.
+Timing is modeled by back-annotating the generated SDF file into the gate-level netlist during simulation. , using the .sdf (from librelane stage 12 - STA Pre PNR) (standard textual format for representing delay and timing information such as cell delays, interconnect delays, and timing constraints) files, it helps us answer the question: After considering the real delays of gates and wires, does the circuit still work at the desired clock speed?
 
 
 for this, i referred to caravel docs about post synthesis verification, to understand how gate level simulations (GLS) is performed in Open source toolchain projects.
 - the underlying tool used was iverilog (Icarus Verilog)
 - i tried running the old testbench which was using random 100Mhz and the code failed, as the rtl2gds runs we performed were aimed at 50Mhz (50 Mhz = 20ns clock period)
 - from our previous librelane runs, we knew that @50Mhz, this pipelined design was giving -9.1 ns of WNS at the SS corner, which is a setup violation.
-- to make it avoid this violation, i gave it 25 Mhz instead , i.e. 40ns clock speed.
+- to make it avoid this violation, providing sufficient timing margin, i gave it 25 Mhz instead , i.e. 40ns clock speed.
 - icarus verilog failed to account for the sdf annotation inside the testbench, and so was also not possible for verilator.  ( these are 2 majorly used open source compilers). Icarus was able to do Gate-level simulation with just netlist and tb, without accounting for delays, and all 4 cases passed.
-- i shifted to eda playground to use commericial compilers like synopsys vcs, that are more suited for Gate-level simulation with SDF. the netlist generated has almost 72,000+ lines of code, which exceeeds the limit of the EDAPlayground tool, so uploaded these files to github publicly, used a shell script to ask the edaplayground tool to download these files locally and then run synopsys vcs compiler using the testbench i gave, which was able to account for the sdf annotation as well.
-- if you observe the log i have pasted in the block below, towards the end, you can see TEST SUMMARY: 4 PASSED, 0 FAILED out of 4 tests and >>> ALL TESTS PASSED <<<, meaning it worked at this speed and correctly did the right functionality expected from the design, hence passing POST SYNTHESIS VERIFICATION.
+- i shifted to eda playground to use commericial compilers like synopsys vcs, that are more suited for Gate-level simulation with SDF (timing-aware gate-level simulation). the netlist generated has almost 72,000+ lines of code, which exceeeds the limit of the EDAPlayground tool, so uploaded these files to github publicly, used a shell script to ask the edaplayground tool to download these files locally and then run synopsys vcs compiler using the testbench i gave, which was able to account for the sdf annotation as well.
+- if you observe the log i have pasted in the block below, towards the end, you can see TEST SUMMARY: 4 PASSED, 0 FAILED out of 4 tests and >>> ALL TESTS PASSED <<<, meaning it worked at this speed and correctly did the right functionality expected from the design as per this testbench and under these annotated delays, thereby successfully completing the post-synthesis gate-level simulation for the implemented test cases.
 - can re-run the same environment to verify the result personally from the working environment eda playground code given above.
+
+---
+
+# SYNTHESIS VISUALIZATION
+
+### BASE RTL DESIGN BASED CIRCUIT VISUAL (using netlistssvg by Neil Turley)
+
+<img width="3934" height="17014" alt="rtl_design" src="https://github.com/user-attachments/assets/49fca372-e6b9-461d-a95a-da536a8a9229" />
+
+### POST SYNTHESIS NETLIST BASED CIRCUIT VISUAL (using netlistssvg by Neil Turley)
+
+<img width="10710" height="10127" alt="netlist" src="https://github.com/user-attachments/assets/6ecc76ba-c2cd-4e1f-b41f-72444926004c" />
+
+
 
 ---
 
