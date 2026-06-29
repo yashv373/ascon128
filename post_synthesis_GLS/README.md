@@ -7,7 +7,7 @@ Files to run gate level simulations, post synthesis, via Open Source Tools.
 Tool: EDAPlayground with shell script (run.sh)
 Working Environment: https://edaplayground.com/x/f5Wm
 ---
-
+```
 [2026-06-29 15:57:44 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -1141,3 +1141,4 @@ $finish at simulation time             10940000
 Time: 10940000 ps
 CPU Time:      3.590 seconds;       Data structure size:   3.5Mb
 Mon Jun 29 11:58:07 2026
+```
