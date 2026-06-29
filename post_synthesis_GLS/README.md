@@ -9,6 +9,26 @@ Tool: EDAPlayground with shell script (run.sh)
 Working Environment: https://edaplayground.com/x/f5Wm
 
 ---
+
+This work is trying to perform post synthesis verification on a synthesized verilog design, which generates a gate level netlist, and the same design is then compared with the functional verification \
+testbench from the rtl design stages, to make sure that after synthesis stage is completed, the netlist that will move onto the PD stage, is functionally correct.
+the same stage additionally also accounts for the timing , using the .sdf (standard textual format for representing delay and timing information such as cell delays, interconnect delays, and timing constraints) files, it helps us answer the question: After considering the real delays of gates and wires, does the circuit still work at the desired clock speed?
+
+
+for this, i referred to caravel docs about post synthesis verification, to understand how gate level simulations (GLS) is performed in Open source toolchain projects.
+- the underlying tool used was iverilog (Icarus Verilog)
+- i tried running the old testbench which was using random 100Mhz and the code failed, as the rtl2gds runs we performed were aimed at 50Mhz (50 Mhz = 20ns clock period)
+- from our previous librelane runs, we knew that @50Mhz, this pipelined design was giving -9.1 ns of WNS at the SS corner, which is a setup violation.
+- to make it avoid this violation, i gave it 25 Mhz instead , i.e. 40ns clock speed.
+- icarus verilog failed to account for the sdf annotation inside the testbench, and so was also not possible for verilator.  ( these are 2 majorly used open source compilers). Icarus was able to do Gate-level simulation with just netlist and tb, without accounting for delays, and all 4 cases passed.
+- i shifted to eda playground to use commericial compilers like synopsys vcs, that are more suited for Gate-level simulation with SDF. the netlist generated has almost 72,000+ lines of code, which exceeeds the limit of the EDAPlayground tool, so uploaded these files to github publicly, used a shell script to ask the edaplayground tool to download these files locally and then run synopsys vcs compiler using the testbench i gave, which was able to account for the sdf annotation as well.
+- if you observe the log i have pasted in the block below, towards the end, you can see TEST SUMMARY: 4 PASSED, 0 FAILED out of 4 tests and >>> ALL TESTS PASSED <<<, meaning it worked at this speed and correctly did the right functionality expected from the design, hence passing POST SYNTHESIS VERIFICATION.
+- can re-run the same environment to verify the result personally from the working environment eda playground code given above.
+
+---
+
+# LOG:
+
 ```
 [2026-06-29 15:57:44 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
