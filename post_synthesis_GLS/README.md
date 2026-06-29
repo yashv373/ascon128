@@ -4,8 +4,10 @@ Files to run gate level simulations, post synthesis, via Open Source Tools.
 ---
 
 ### Simulation Log OUTPUT as of Jun 2029, 10:12 PM IST. 
+
 Tool: EDAPlayground with shell script (run.sh)
 Working Environment: https://edaplayground.com/x/f5Wm
+
 ---
 ```
 [2026-06-29 15:57:44 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
