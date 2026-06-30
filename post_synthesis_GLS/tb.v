@@ -8,6 +8,8 @@
 // ============================================================================
 
 `timescale 1ns / 1ps
+`define NTC
+`define RECREM
 
 module tb_ascon_verilog;
 
