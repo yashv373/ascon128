@@ -88,8 +88,14 @@ module tb_ascon_verilog;
     // $dumpfile("gls_sim.vcd");
     // $dumpvars(0, tb_ascon_verilog); 
  
-    $sdf_annotate("ascon_core_adpt_encdec.sdf", u_dut); 
+   // $sdf_annotate("ascon_core_adpt_encdec.sdf", u_dut); 
+
+		initial
+begin
+	$sdf_annotate("ascon_core_adpt_encdec.sdf",tb_ascon_verilog.u_dut,"sdf.log","MAXIMUM");   
 end
+		
+//end
 
     // ========================================================================
     // Test outcome counters
