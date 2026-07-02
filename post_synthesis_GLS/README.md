@@ -45,30 +45,30 @@ updated on jul 2 -- from jun 29's version
 added "+neg_tchk" to the run.bash script - fixes errors.
 
 ```
-[2026-07-02 13:02:09 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+[2026-07-02 13:18:30 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0 2978k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 2978k  100 2978k    0     0  12.1M      0 --:--:-- --:--:-- --:--:-- 12.1M
+  0 2978k    0 15468    0     0   132k      0  0:00:22 --:--:--  0:00:22  131k
+100 2978k  100 2978k    0     0  19.7M      0 --:--:-- --:--:-- --:--:-- 19.6M
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 6207k  100 6207k    0     0  27.0M      0 --:--:-- --:--:-- --:--:-- 27.0M
+100 6207k  100 6207k    0     0  37.4M      0 --:--:-- --:--:-- --:--:-- 37.4M
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  952k  100  952k    0     0  2075k      0 --:--:-- --:--:-- --:--:-- 2084k
+100  952k  100  952k    0     0  8355k      0 --:--:-- --:--:-- --:--:-- 8429k
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  5541  100  5541    0     0  62965      0 --:--:-- --:--:-- --:--:-- 63689
+100  5541  100  5541    0     0  86578      0 --:--:-- --:--:-- --:--:-- 86578
                          Chronologic VCS (TM)
-       Version X-2025.06-SP1_Full64 -- Thu Jul  2 09:02:12 2026
+       Version X-2025.06-SP1_Full64 -- Thu Jul  2 09:18:31 2026
 
                     Copyright (c) 1991 - 2025 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -681,17 +681,15 @@ ascon_core_adpt_encdec, "gf180mcu_fd_sc_mcu7t5v0__clkinv_2 clkload9( .I (clknet_
    ***   $sdf_annotate() version 1.2R
    ***    SDF file: "ascon_core_adpt_encdec.sdf"
    ***    Annotation scope: tb_ascon_verilog.u_dut
-   ***    No MTM selection argument specified
+   ***    MTM selection: "MAXIMUM"
    ***    No SCALE FACTORS argument specified
    ***    No SCALE TYPE argument specified
-   ***    MTM selection defaulted to "TOOL_CONTROL":
-               (+typdelays compiled, TYPICAL delays selected)
    ***    SCALE FACTORS defaulted to "1.0:1.0:1.0":
    ***    SCALE TYPE defaulted to: "FROM_MTM"
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Thu Jul  2 09:02:16 2026
+   ***    SDF annotation begin: Thu Jul  2 09:18:34 2026
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
@@ -788,8 +786,8 @@ module: gf180mcu_fd_sc_mcu7t5v0__dlyd_1, "instance: tb_ascon_verilog.u_dut.outpu
 
 
           Total errors: 0
-          Total warnings: 274
-   ***    SDF annotation completed: Thu Jul  2 09:02:16 2026
+          Total warnings: 278
+   ***    SDF annotation completed: Thu Jul  2 09:18:35 2026
 
 
 Starting vcs inline pass...
@@ -1059,12 +1057,12 @@ recompiling module gf180mcu_fd_sc_mcu7t5v0__xor3_func
 All of 257 modules done
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib -L/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o  _253_archive_1.so objs/udps/qzQ2U.o objs/udps/J6yjv.o objs/udps/Iq9kf.o objs/udps/s6J8P.o  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib -L/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o  _254_archive_1.so objs/udps/qzQ2U.o objs/udps/J6yjv.o objs/udps/Iq9kf.o objs/udps/s6J8P.o  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 8.902 seconds to compile + 2.364 seconds to elab + 3.651 seconds to link
+CPU time: 9.112 seconds to compile + 2.333 seconds to elab + 3.794 seconds to link
 Chronologic VCS simulator copyright 1991-2025
 Contains Synopsys proprietary information.
-Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Jul  2 09:02 2026
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Jul  2 09:18 2026
 Doing SDF annotation ...... Done
 ------------------------------------------------------------
 TEST 1: Empty AD, Empty PT (key=0, nonce=0)
@@ -1101,12 +1099,12 @@ TEST 4: 8-byte AD ('metadata'), 6-byte PT ('secret')
 TEST SUMMARY: 4 PASSED, 0 FAILED out of 4 tests
 ============================================================
 >>> ALL TESTS PASSED <<<
-$finish called from file "testbench.sv", line 549.
+$finish called from file "testbench.sv", line 551.
 $finish at simulation time             10940000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 10940000 ps
-CPU Time:      2.650 seconds;       Data structure size:   3.6Mb
-Thu Jul  2 09:02:30 2026
+CPU Time:      3.150 seconds;       Data structure size:   3.6Mb
+Thu Jul  2 09:18:50 2026
 Done
 ```
 
