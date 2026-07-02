@@ -1,15 +1,10 @@
-Files to run gate level simulations, post synthesis, via Open Source Tools.
-
-
----
-
-### Simulation Log OUTPUT 
+ 
+## TIMING AWARE GATE LEVEL SIMULATION / VERIFICATION (POST-SYNTHESIS)
 
 Tool: EDAPlayground with shell script (run.bash)
 Working Environment: https://edaplayground.com/x/f5Wm
 
----
-## TIMING AWARE GATE LEVEL SIMULATION / VERIFICATION (POST-SYNTHESIS)
+
 This work is trying to perform post synthesis verification on a synthesized verilog design, which generates a gate level netlist, and the same design as a netlist, is then simulated using the same functional verification testbench developed during RTL verification, to make sure that after synthesis stage is completed, the netlist before proceeding further in the physical implementation flow, is functionally correct.
 Timing is modeled by back-annotating the generated SDF file into the gate-level netlist during simulation. , using the .sdf (from librelane stage 12 - STA Pre PNR) (standard textual format for representing delay and timing information such as cell delays, interconnect delays, and timing constraints) files, it helps us answer the question: After considering the real delays of gates and wires, does the circuit still work at the desired clock speed?
 
