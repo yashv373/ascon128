@@ -1,0 +1,3 @@
+- pipelined design
+- non-pipelined design
+- 
