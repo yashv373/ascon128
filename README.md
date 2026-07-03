@@ -20,8 +20,8 @@
 - RTL Design & Verification: https://github.com/yashv373/ascon128/tree/main/RTL_Design_Verification
 - Synthesis: https://github.com/yashv373/ascon128/tree/main/synthesis
 - Post Synthesis Verification: https://github.com/yashv373/ascon128/tree/main/post_synthesis_GLS
-- Physical Design via LibreLane: 
-- Final Files & results: coming soon
+- Physical Design via LibreLane: https://github.com/yashv373/ascon128/tree/main/physical_design
+- Final Files & results: coming soon 🔜
 
 ---
 
