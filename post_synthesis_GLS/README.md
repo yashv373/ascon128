@@ -35,35 +35,36 @@ for this, i referred to caravel docs about post synthesis verification, to under
 
 ---
 
-# LOG ( updated on 02/07/2026 -- 18:34 IST):
+# LOG ( updated on 03/07/2026 -- 13:10 IST):
+updated on jul 3 -- added 3 more cases to tb from lakshmi's tb to this tb
 updated on jul 2 -- from jun 29's version 
 added "+neg_tchk" to the run.bash script - fixes errors.
 
 ```
-[2026-07-02 13:18:30 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+[2026-07-03 07:35:55 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0 2978k    0 15468    0     0   132k      0  0:00:22 --:--:--  0:00:22  131k
-100 2978k  100 2978k    0     0  19.7M      0 --:--:-- --:--:-- --:--:-- 19.6M
+  5 2978k    5  175k    0     0  2172k      0  0:00:01 --:--:--  0:00:01 2172k
+100 2978k  100 2978k    0     0  28.5M      0 --:--:-- --:--:-- --:--:-- 28.2M
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 6207k  100 6207k    0     0  37.4M      0 --:--:-- --:--:-- --:--:-- 37.4M
+100 6207k  100 6207k    0     0  26.5M      0 --:--:-- --:--:-- --:--:-- 26.5M
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  952k  100  952k    0     0  8355k      0 --:--:-- --:--:-- --:--:-- 8429k
+100  952k  100  952k    0     0  12.9M      0 --:--:-- --:--:-- --:--:-- 12.9M
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  5541  100  5541    0     0  86578      0 --:--:-- --:--:-- --:--:-- 86578
+100  5541  100  5541    0     0  92350      0 --:--:-- --:--:-- --:--:-- 92350
                          Chronologic VCS (TM)
-       Version X-2025.06-SP1_Full64 -- Thu Jul  2 09:18:31 2026
+       Version X-2025.06-SP1_Full64 -- Fri Jul  3 03:35:56 2026
 
                     Copyright (c) 1991 - 2025 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -676,15 +677,18 @@ ascon_core_adpt_encdec, "gf180mcu_fd_sc_mcu7t5v0__clkinv_2 clkload9( .I (clknet_
    ***   $sdf_annotate() version 1.2R
    ***    SDF file: "ascon_core_adpt_encdec.sdf"
    ***    Annotation scope: tb_ascon_verilog.u_dut
-   ***    MTM selection: "MAXIMUM"
+   ***    SDF Annotator log file: "MAXIMUM"
+   ***    No MTM selection argument specified
    ***    No SCALE FACTORS argument specified
    ***    No SCALE TYPE argument specified
+   ***    MTM selection defaulted to "TOOL_CONTROL":
+               (+typdelays compiled, TYPICAL delays selected)
    ***    SCALE FACTORS defaulted to "1.0:1.0:1.0":
    ***    SCALE TYPE defaulted to: "FROM_MTM"
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Thu Jul  2 09:18:34 2026
+   ***    SDF annotation begin: Fri Jul  3 03:35:59 2026
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
@@ -770,6 +774,7 @@ module: gf180mcu_fd_sc_mcu7t5v0__dlyd_1, "instance: tb_ascon_verilog.u_dut.outpu
   the source.
 
 All future warnings not reported; use +sdfverbose to report them.
+See also the log file: MAXIMUM
 
 Warning-[SDFCOM_UHICD] Up-hierarchy Interconnect Delay ignored
 ascon_core_adpt_encdec.sdf, 18400
@@ -781,8 +786,8 @@ module: gf180mcu_fd_sc_mcu7t5v0__dlyd_1, "instance: tb_ascon_verilog.u_dut.outpu
 
 
           Total errors: 0
-          Total warnings: 278
-   ***    SDF annotation completed: Thu Jul  2 09:18:35 2026
+          Total warnings: 274
+   ***    SDF annotation completed: Fri Jul  3 03:36:00 2026
 
 
 Starting vcs inline pass...
@@ -1054,10 +1059,10 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib -L/apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o  _254_archive_1.so objs/udps/qzQ2U.o objs/udps/J6yjv.o objs/udps/Iq9kf.o objs/udps/s6J8P.o  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs      -lvcsnew -ldistsimclient -lsimprofile -luclinative /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/vcsmx/vcs/X-2025.06-SP1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 9.112 seconds to compile + 2.333 seconds to elab + 3.794 seconds to link
+CPU time: 9.480 seconds to compile + 2.371 seconds to elab + 4.056 seconds to link
 Chronologic VCS simulator copyright 1991-2025
 Contains Synopsys proprietary information.
-Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Jul  2 09:18 2026
+Compiler version X-2025.06-SP1_Full64; Runtime version X-2025.06-SP1_Full64;  Jul  3 03:36 2026
 Doing SDF annotation ...... Done
 ------------------------------------------------------------
 TEST 1: Empty AD, Empty PT (key=0, nonce=0)
@@ -1090,16 +1095,33 @@ TEST 4: 8-byte AD ('metadata'), 6-byte PT ('secret')
   t0_out = 0x9acf10c942363add (expected 0x9acf10c942363add)
   t1_out = 0x987a35ce66cff532 (expected 0x987a35ce66cff532)
 
+------------------------------------------------------------
+TEST 5: Multi-block Encrypt - 13B AD, 40B PT (nonce != key)
+------------------------------------------------------------
+[PASS] Test 5: All CT blocks and Tag match
+  t0_out = 0x82fecae37f5d2aa2 (expected 0x82fecae37f5d2aa2)
+  t1_out = 0x0730f873e48e057a (expected 0x0730f873e48e057a)
+
+------------------------------------------------------------
+TEST 6: Multi-block Decrypt (correct tag, auth_ok=1)
+------------------------------------------------------------
+[PASS] Test 6: All PT blocks recovered, auth_ok=1
+
+------------------------------------------------------------
+TEST 7: Tampered-tag Decrypt (auth_ok must be 0)
+------------------------------------------------------------
+[PASS] Test 7: Tampered tag correctly rejected (auth_ok=0)
+
 ============================================================
-TEST SUMMARY: 4 PASSED, 0 FAILED out of 4 tests
+TEST SUMMARY: 7 PASSED, 0 FAILED out of 7 tests
 ============================================================
 >>> ALL TESTS PASSED <<<
-$finish called from file "testbench.sv", line 551.
-$finish at simulation time             10940000
+$finish called from file "testbench.sv", line 739.
+$finish at simulation time             24980000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 10940000 ps
-CPU Time:      3.150 seconds;       Data structure size:   3.6Mb
-Thu Jul  2 09:18:50 2026
+Time: 24980000 ps
+CPU Time:      5.140 seconds;       Data structure size:   3.6Mb
+Fri Jul  3 03:36:18 2026
 Done
 ```
 
