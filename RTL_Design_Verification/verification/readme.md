@@ -1,0 +1,3 @@
+- verilog tb based verification - 7 cases
+- cocotb + py golden model based verification - 5 categories
+- design author: Yashvardhan Singh
