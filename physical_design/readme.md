@@ -7,6 +7,7 @@ For completing the RTL to GDS flow, we are using automated flows like LibreLane 
 ---
 
 ### Setup of Librelane:
+<img width="800" height="229" alt="image" src="https://github.com/user-attachments/assets/c2751568-7423-4082-9576-022610acff57" />
 
 ```
 Setup:
@@ -37,8 +38,8 @@ simplify things, versatile but doesn’t allow for a lot of customization
 
 ---
 
-### Current Runs:
-RTL used: Non-Pipelined
+### Current Progress:
+#### RTL used: Non-Pipelined
 Once all of the files are setup, we moved to running the flow in Docker terminal:
 ` librelane config.yaml --pdk gf180mcuD --pdk-root /foss/pdks --manual-pdk
 --run-tag ascon_run_final `
