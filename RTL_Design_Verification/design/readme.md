@@ -1,3 +1,3 @@
 - pipelined design
 - non-pipelined design
-- 
+- design author: Lakshmi Iyer
