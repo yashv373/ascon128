@@ -17,7 +17,7 @@ this image represents a visualized circuit based on the netlist generate after t
 
 ### Area report from yosys:
 - critical path delay from this log at this stage (06/80) is 92711.50 ps (step 132.1.1) which is 92.7ns.
-- *Note: This is an inflated pre-routing value; the actual logic depth is only 8 gates (cited as \lev = 8` in Step 122.1.1).*
+- *Note: This is an inflated pre-routing value; the actual logic depth is only 8 gates (cited as `lev = 8` in Step 132.1.1).*
 ```
 139. Printing statistics.
 
