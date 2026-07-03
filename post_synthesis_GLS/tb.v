@@ -5,6 +5,9 @@
 //   Test 2: Empty AD, 5-byte PT "Hello" (key=000102...0f, nonce=same)
 //   Test 3: Encrypt-then-decrypt roundtrip of Test 2
 //   Test 4: 8-byte AD ("metadata"), 6-byte PT ("secret") (key=000102...0f, nonce=same)
+//   Test 5: Multi-block Encrypt -- 13B AD ("header-data!!"), 40B PT (nonce != key)
+//   Test 6: Multi-block Decrypt -- same vectors as Test 5, correct tag, auth_ok=1
+//   Test 7: Tampered-tag Decrypt -- 1 bit flipped in tag, auth_ok must be 0
 // ============================================================================
 
 `timescale 1ns / 1ps
@@ -85,17 +88,8 @@ module tb_ascon_verilog;
     );
 	
 	initial begin
-    // $dumpfile("gls_sim.vcd");
-    // $dumpvars(0, tb_ascon_verilog); 
- 
-   // $sdf_annotate("ascon_core_adpt_encdec.sdf", u_dut); 
-
-		initial
-begin
-	$sdf_annotate("ascon_core_adpt_encdec.sdf",tb_ascon_verilog.u_dut, ,"MAXIMUM");   
-end
-		
-//end
+		$sdf_annotate("ascon_core_adpt_encdec.sdf", tb_ascon_verilog.u_dut, , "MAXIMUM");
+	end
 
     // ========================================================================
     // Test outcome counters
@@ -540,12 +534,203 @@ end
             end
         end
 
- 
+
+        // ====================================================================
+        // TEST 5: Multi-block Encrypt -- 13B AD ("header-data!!"), 40B PT
+        //   key = 000102...0f, nonce = 101112...1f (different from key)
+        //   Vectors from ascon_aead128_ref.py
+        //   Golden CT blocks:
+        //     Block 0 (16B): b4bc0d0c916333862c430f33f174bf5e
+        //     Block 1 (16B): c7ef592b4653df217cd73d78d4674209
+        //     Block 2 ( 8B): b2a3ed09ce30b0f0
+        //   Golden tag0 = 82fecae37f5d2aa2, tag1 = 0730f873e48e057a
+        // ====================================================================
+        $display("");
+        $display("------------------------------------------------------------");
+        $display("TEST 5: Multi-block Encrypt - 13B AD, 40B PT (nonce != key)");
+        $display("------------------------------------------------------------");
+
+        hw_reset;
+
+        pulse_start(
+            1'b0,                 // i_dec_mode
+            64'h0706050403020100, // i_k0
+            64'h0f0e0d0c0b0a0908, // i_k1
+            64'h1716151413121110, // i_n0  (different from key)
+            64'h1f1e1d1c1b1a1918, // i_n1
+            64'd0,                // i_tag0
+            64'd0,                // i_tag1
+            1'b0                  // i_ad_empty
+        );
+
+        wait_busy;
+
+        // AD: "header-data!!" = 13 bytes, little-endian 128-bit
+        send_ad_block(
+            128'h0000002121617461642d726564616568,
+            5'd13,
+            1'b1
+        );
+
+        // PT block 0: bytes 0..15 (16B, not last)
+        begin : test5_block
+            reg ct0_ok, ct1_ok, ct2_ok, t0_ok, t1_ok;
+
+            send_din_block(128'h0f0e0d0c0b0a09080706050403020100, 5'd16, 1'b0);
+            ct0_ok = (captured_dout === 128'hb4bc0d0c916333862c430f33f174bf5e);
+            if (!ct0_ok)
+                $display("  CT blk0 got %032h exp b4bc0d0c916333862c430f33f174bf5e", captured_dout);
+
+            // PT block 1: bytes 16..31 (16B, not last)
+            send_din_block(128'h1f1e1d1c1b1a19181716151413121110, 5'd16, 1'b0);
+            ct1_ok = (captured_dout === 128'hc7ef592b4653df217cd73d78d4674209);
+            if (!ct1_ok)
+                $display("  CT blk1 got %032h exp c7ef592b4653df217cd73d78d4674209", captured_dout);
+
+            // PT block 2: bytes 32..39 (8B, last)
+            send_din_block(128'h00000000000000002726252423222120, 5'd8, 1'b1);
+            ct2_ok = (captured_dout[63:0] === 64'hb2a3ed09ce30b0f0);
+            if (!ct2_ok)
+                $display("  CT blk2 got %016h exp b2a3ed09ce30b0f0", captured_dout[63:0]);
+
+            wait_done;
+
+            t0_ok = (t0_out === 64'h82fecae37f5d2aa2);
+            t1_ok = (t1_out === 64'h0730f873e48e057a);
+
+            if (ct0_ok && ct1_ok && ct2_ok && t0_ok && t1_ok) begin
+                $display("[PASS] Test 5: All CT blocks and Tag match");
+                $display("  t0_out = 0x%016h (expected 0x82fecae37f5d2aa2)", t0_out);
+                $display("  t1_out = 0x%016h (expected 0x0730f873e48e057a)", t1_out);
+                pass_count = pass_count + 1;
+            end else begin
+                $display("[FAIL] Test 5: MISMATCH");
+                if (!t0_ok)
+                    $display("  t0_out = 0x%016h (expected 0x82fecae37f5d2aa2)", t0_out);
+                if (!t1_ok)
+                    $display("  t1_out = 0x%016h (expected 0x0730f873e48e057a)", t1_out);
+                fail_count = fail_count + 1;
+            end
+        end
+
+        // ====================================================================
+        // TEST 6: Multi-block Decrypt -- same vectors as Test 5, correct tag
+        //   Feed CT blocks back -> must recover original PT, auth_ok = 1
+        // ====================================================================
+        $display("");
+        $display("------------------------------------------------------------");
+        $display("TEST 6: Multi-block Decrypt (correct tag, auth_ok=1)");
+        $display("------------------------------------------------------------");
+
+        hw_reset;
+
+        pulse_start(
+            1'b1,                 // i_dec_mode
+            64'h0706050403020100, // i_k0
+            64'h0f0e0d0c0b0a0908, // i_k1
+            64'h1716151413121110, // i_n0
+            64'h1f1e1d1c1b1a1918, // i_n1
+            64'h82fecae37f5d2aa2, // i_tag0
+            64'h0730f873e48e057a, // i_tag1
+            1'b0                  // i_ad_empty
+        );
+
+        wait_busy;
+
+        send_ad_block(
+            128'h0000002121617461642d726564616568,
+            5'd13,
+            1'b1
+        );
+
+        begin : test6_block
+            reg pt0_ok, pt1_ok, pt2_ok, auth_pass;
+
+            // CT block 0 -> expect PT bytes 0..15
+            send_din_block(128'hb4bc0d0c916333862c430f33f174bf5e, 5'd16, 1'b0);
+            pt0_ok = (captured_dout === 128'h0f0e0d0c0b0a09080706050403020100);
+            if (!pt0_ok)
+                $display("  PT blk0 got %032h exp 0f0e0d0c0b0a09080706050403020100", captured_dout);
+
+            // CT block 1 -> expect PT bytes 16..31
+            send_din_block(128'hc7ef592b4653df217cd73d78d4674209, 5'd16, 1'b0);
+            pt1_ok = (captured_dout === 128'h1f1e1d1c1b1a19181716151413121110);
+            if (!pt1_ok)
+                $display("  PT blk1 got %032h exp 1f1e1d1c1b1a19181716151413121110", captured_dout);
+
+            // CT block 2 -> expect PT bytes 32..39
+            send_din_block(128'h0000000000000000b2a3ed09ce30b0f0, 5'd8, 1'b1);
+            pt2_ok = (captured_dout[63:0] === 64'h2726252423222120);
+            if (!pt2_ok)
+                $display("  PT blk2 got %016h exp 2726252423222120", captured_dout[63:0]);
+
+            wait_done;
+
+            auth_pass = (auth_ok === 1'b1);
+
+            if (pt0_ok && pt1_ok && pt2_ok && auth_pass) begin
+                $display("[PASS] Test 6: All PT blocks recovered, auth_ok=1");
+                pass_count = pass_count + 1;
+            end else begin
+                $display("[FAIL] Test 6: MISMATCH");
+                if (!auth_pass)
+                    $display("  auth_ok = %0d (expected 1)", auth_ok);
+                fail_count = fail_count + 1;
+            end
+        end
+
+        // ====================================================================
+        // TEST 7: Tampered-tag Decrypt -- 1 bit flipped in tag -> auth_ok = 0
+        //   Same CT and AD as Test 6, but tag0 LSB flipped
+        // ====================================================================
+        $display("");
+        $display("------------------------------------------------------------");
+        $display("TEST 7: Tampered-tag Decrypt (auth_ok must be 0)");
+        $display("------------------------------------------------------------");
+
+        hw_reset;
+
+        pulse_start(
+            1'b1,                 // i_dec_mode
+            64'h0706050403020100, // i_k0
+            64'h0f0e0d0c0b0a0908, // i_k1
+            64'h1716151413121110, // i_n0
+            64'h1f1e1d1c1b1a1918, // i_n1
+            64'h82fecae37f5d2aa3, // i_tag0 -- bit 0 flipped!
+            64'h0730f873e48e057a, // i_tag1
+            1'b0                  // i_ad_empty
+        );
+
+        wait_busy;
+
+        send_ad_block(
+            128'h0000002121617461642d726564616568,
+            5'd13,
+            1'b1
+        );
+
+        begin : test7_block
+            // Feed same CT blocks (recovered PT doesn't matter here)
+            send_din_block(128'hb4bc0d0c916333862c430f33f174bf5e, 5'd16, 1'b0);
+            send_din_block(128'hc7ef592b4653df217cd73d78d4674209, 5'd16, 1'b0);
+            send_din_block(128'h0000000000000000b2a3ed09ce30b0f0, 5'd8, 1'b1);
+
+            wait_done;
+
+            if (auth_ok === 1'b0) begin
+                $display("[PASS] Test 7: Tampered tag correctly rejected (auth_ok=0)");
+                pass_count = pass_count + 1;
+            end else begin
+                $display("[FAIL] Test 7: Tampered tag NOT rejected (auth_ok=%0d, expected 0)", auth_ok);
+                fail_count = fail_count + 1;
+            end
+        end
+
         // Summary
         // ====================================================================
         $display("");
         $display("============================================================");
-        $display("TEST SUMMARY: %0d PASSED, %0d FAILED out of 4 tests",
+        $display("TEST SUMMARY: %0d PASSED, %0d FAILED out of 7 tests",
                  pass_count, fail_count);
         $display("============================================================");
 
