@@ -1,4 +1,4 @@
-# Synthesis - using YosysHQ
+# Synthesis - using YosysHQ 0.64 
 ---
 
 ## Synthesis results of the ASCON Core Design
@@ -7,7 +7,17 @@
 - Total area: 178785.868800  µm² which is 14.78% of 1210000 µm² (1100 x 1100 die)
 - Sequential area: 38.28% of total area = 68,441.95 µm²
 
+This was done via the librelane flow, and restricting it only upto synthesis stage (stage 06/80) - which means only first six stages were run and rest were skipped.
+
+## Netlist Visualization using `netlistsvg` by Neil Turley (GitHub):
+this image represents a visualized circuit based on the netlist generate after the synthesis stage. it shows how  the circuit will look like. you can open image in a new tab and zoom in and see the individual cells like the flip-flops and gates. this visualization is ABC format which means it is Tech-Agnostic (not attached to a PDK) as pdk standard cells are not clearly visualized by this tool. (the pdk based netlist image is available in post_synthesis_GLS's readme, if you would like to see.)
+
+<img width="3934" height="17014" alt="image" src="https://github.com/user-attachments/assets/85430363-ac2d-4f62-a380-96f8b36179f7" />
+
+
 ### Area report from yosys:
+- critical path delay from this log at this stage (06/80) is 92711.50 ps (step 132.1.1) which is 92.7ns.
+- *Note: This is an inflated pre-routing value; the actual logic depth is only 8 gates (cited as \lev = 8` in Step 122.1.1).*
 ```
 139. Printing statistics.
 
@@ -59,6 +69,11 @@
 
 ```
 
+### Graph visualization through graphviz-sfdp: ( pls open in new tab and zoom )
+
+ <img width="1679" height="839" alt="image" src="https://github.com/user-attachments/assets/9734a3d8-ed9b-4564-b55b-5a69a7720049" />
+
+---
 terminal log:
 
 ```
