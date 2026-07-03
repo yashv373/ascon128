@@ -1,0 +1,48 @@
+139. Printing statistics.
+
+=== ascon_core_adpt_encdec ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+     6060        - wires
+     6957        - wire bits
+      681        - public wires
+     1578        - public wire bits
+       30        - ports
+      927        - port bits
+     6298 1.79E+05 cells
+       61 1.07E+03   gf180mcu_fd_sc_mcu7t5v0__and2_1
+       17  373.184   gf180mcu_fd_sc_mcu7t5v0__and3_1
+        3   72.442   gf180mcu_fd_sc_mcu7t5v0__and4_1
+       96 2.11E+03   gf180mcu_fd_sc_mcu7t5v0__aoi211_1
+      535  9.4E+03   gf180mcu_fd_sc_mcu7t5v0__aoi21_1
+       81 1.96E+03   gf180mcu_fd_sc_mcu7t5v0__aoi221_1
+       72 2.21E+03   gf180mcu_fd_sc_mcu7t5v0__aoi222_1
+      131 2.59E+03   gf180mcu_fd_sc_mcu7t5v0__aoi22_1
+      295 2.59E+03   gf180mcu_fd_sc_mcu7t5v0__clkinv_1
+      917 6.84E+04   gf180mcu_fd_sc_mcu7t5v0__dffrnq_1
+      153 5.04E+03   gf180mcu_fd_sc_mcu7t5v0__mux2_2
+      973 1.07E+04   gf180mcu_fd_sc_mcu7t5v0__nand2_1
+       42  645.389   gf180mcu_fd_sc_mcu7t5v0__nand3_1
+       13  256.838   gf180mcu_fd_sc_mcu7t5v0__nand4_1
+      426 5.61E+03   gf180mcu_fd_sc_mcu7t5v0__nor2_1
+       12  210.739   gf180mcu_fd_sc_mcu7t5v0__nor3_1
+       34  746.368   gf180mcu_fd_sc_mcu7t5v0__nor4_1
+      141  3.1E+03   gf180mcu_fd_sc_mcu7t5v0__oai211_1
+      637 1.12E+04   gf180mcu_fd_sc_mcu7t5v0__oai21_1
+       37  974.669   gf180mcu_fd_sc_mcu7t5v0__oai221_1
+       78 1.71E+03   gf180mcu_fd_sc_mcu7t5v0__oai22_1
+       90 2.17E+03   gf180mcu_fd_sc_mcu7t5v0__oai31_1
+       26  684.902   gf180mcu_fd_sc_mcu7t5v0__oai32_1
+       13  228.301   gf180mcu_fd_sc_mcu7t5v0__or2_1
+        4   87.808   gf180mcu_fd_sc_mcu7t5v0__or3_1
+        1   26.342   gf180mcu_fd_sc_mcu7t5v0__or4_1
+       93 2.65E+03   gf180mcu_fd_sc_mcu7t5v0__xnor2_1
+       68 3.58E+03   gf180mcu_fd_sc_mcu7t5v0__xnor3_1
+     1022 2.69E+04   gf180mcu_fd_sc_mcu7t5v0__xor2_1
+      227 1.15E+04   gf180mcu_fd_sc_mcu7t5v0__xor3_1
+
+   Chip area for module '\ascon_core_adpt_encdec': 178785.868800
+     of which used for sequential elements: 68441.945600 (38.28%)
+

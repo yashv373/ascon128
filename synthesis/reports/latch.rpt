@@ -1,0 +1,8 @@
+
+14. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ascon_core_adpt_encdec.\last_dout' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:79$47'.
+No latch inferred for signal `\ascon_core_adpt_encdec.\last_nrate' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:79$47'.
+No latch inferred for signal `\ascon_core_adpt_encdec.\di' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:79$47'.
+No latch inferred for signal `\ascon_core_adpt_encdec.\ad_pad' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:58$6'.
+No latch inferred for signal `\ascon_core_adpt_encdec.\ai' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:58$6'.
+No latch inferred for signal `\ascon_core_adpt_encdec.\rcon' from process `\ascon_core_adpt_encdec.$proc$/foss/designs/ascon_pipelined/design.v:46$5'.
