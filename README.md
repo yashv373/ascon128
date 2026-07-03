@@ -3,7 +3,7 @@
 - part of the IEEE SSCS Chipathon Pico 2026 - Track A ( [project proposal](https://docs.google.com/document/d/e/2PACX-1vQ7hXiJkHFsaxKhHVbuH3Zd8qZDoJdL6WpXG3n53tD7aNz_2QSCsUlUvai5AVLdPrBWiSDReBhnfogW/pub) )
 - Target Node: Global Foundries 180 nm PDK 
 - Team Name: CryptoAccel ( A-10 )
-
+- Proposal Review Result: score 3.17/4 , rank - 02/35 -- track A
 ---
 
 <img width="2048" height="1473" alt="image" src="https://github.com/user-attachments/assets/420a6632-c3ed-4a0d-82ad-7331dc9077f0" style="width:50%;"/>
