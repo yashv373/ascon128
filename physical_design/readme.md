@@ -26,14 +26,8 @@ config.yaml, constraint.sdc
 - Launched docker desktop, opened container’s terminal, and ran the flow with the
 command: librelane config.yaml --pdk gf180mcuD --pdk-root /foss/pdks --run-tag
 counter_run
-- Note: Difference between ORFS, Librelane, OpenRoad, OpenLane?
-- OpenRoad → an opensource PD software tool
-- OpenLane → an automation script written that calls a lot of softwares from
-synthesis stage to routing + timing, providing RTL to GDS automation
-- ORFS → Improved version of OpenLane, automated flow scripts written, that allow
-for maximum customization and changes in the flow.
-- Librelane → Improved version of OpenLane, easier to setup, uses python to
-simplify things, versatile but doesn’t allow for a lot of customization
+
+ We utilized LibreLane, a Python-based RTL-to-GDSII flow that orchestrates Yosys, OpenROAD, and Magic, chosen for its seamless Docker integration via IIC-OSIC-TOOLS.
 ```
 
 ---
