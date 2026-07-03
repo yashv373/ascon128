@@ -58,6 +58,12 @@ counter_demo config YAML) — so i reduced PDN vertical/horizontal widths from
 
 The working run needed about 43:13 mins to complete all 80 stages of the flow.
 
+##### Our conditions for the flow were:
+- Clock freq: 50Mhz
+- Clock period: 20ns
+- Target Density: 0.6
+- Die size: 1100x1100
+
 ### GDS Visualization:
 <img width="1251" height="744" alt="image" src="https://github.com/user-attachments/assets/f15daf77-dcb3-4daa-b75a-c21d978ce7ef" />
 <img width="1158" height="824" alt="image" src="https://github.com/user-attachments/assets/b889524a-9d9c-41bf-994c-56495800d9a7" />
