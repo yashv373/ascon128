@@ -1,4 +1,4 @@
-<img width="947" height="806" alt="image" src="https://github.com/user-attachments/assets/dd415085-ef83-441a-a732-41e9f8ec8ed3" /># Progress as of jul 4
+ # Progress as of jul 4
 
 ---
 
