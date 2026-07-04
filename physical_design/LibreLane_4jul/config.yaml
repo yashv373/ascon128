@@ -1,0 +1,97 @@
+# GF180MCU LibreLane config -- ASCON 128 Core
+meta:
+  version: 3
+  flow: Classic
+
+FALLBACK_SDC: dir::constraints.sdc
+
+# Add cell padding to give high-drive pins breathing room for routing
+GPL_CELL_PADDING: 4
+DPL_CELL_PADDING: 4
+DIODE_PADDING: 0
+
+# 1. Update Top Module Name
+DESIGN_NAME: ascon_core_adpt_encdec
+
+# 2. Update the Verilog file name to match the file in your folder
+VERILOG_FILES:
+  - dir::design.v
+
+# 3. Double-check your Verilog file to ensure your clock pin is actually named 'clk'!
+CLOCK_PORT: clk
+
+# 4. Target Freq: 25 MHz = 40ns period because T=1/f
+CLOCK_PERIOD: 40.0
+
+# Map the 3.3V corners to their respective .lib files
+LIB:
+  "*_tt_025C_3v30":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib
+  "*_ss_125C_3v00":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
+  "*_ff_n40C_3v60":
+    - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ff_n40C_3v60.lib
+
+# Tell LibreLane which timing corners to run
+DEFAULT_CORNER: nom_tt_025C_3v30
+STA_CORNERS:
+  - nom_tt_025C_3v30
+  - max_ss_125C_3v00
+  - min_ff_n40C_3v60
+
+# 5. Die area: 1100 x 1100 micrometers
+FP_SIZING: absolute
+DIE_AREA: [0.0, 0.0, 1100.0, 1100.0]
+
+# Power / ground nets.
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+# Signoff / streamout.
+PRIMARY_GDSII_STREAMOUT_TOOL: klayout
+
+# Routing / ESD.
+RT_MAX_LAYER: Metal5
+RT_CLOCK_MIN_LAYER: Metal3
+RT_CLOCK_MAX_LAYER: Metal5
+PDN_MULTILAYER: false
+RUN_ANTENNA_REPAIR: true
+RUN_POST_GRT_DESIGN_REPAIR: true
+RUN_POST_GRT_RESIZER_TIMING: true
+RUN_HEURISTIC_DIODE_INSERTION: true
+HEURISTIC_ANTENNA_THRESHOLD: 15
+DRT_ANTENNA_REPAIR_ITERS: 0
+EXTRA_LEFS:
+  - /foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lef/gf180mcu_fd_sc_mcu7t5v0.lef
+CTS_CLK_MAX_WIRE_LENGTH: 300
+CTS_ROOT_BUFFER: gf180mcu_fd_sc_mcu7t5v0__clkbuf_4
+# Power distribution network (straps + pitch).
+PDN_VWIDTH: 0.8
+PDN_HWIDTH: 0.8
+PDN_VSPACING: 1
+PDN_HSPACING: 1
+PDN_VPITCH: 120
+PDN_HPITCH: 120
+PDN_EXTEND_TO: boundary
+
+# 6. Placement Target Density
+PL_TARGET_DENSITY_PCT: 25
+MAX_FANOUT_CONSTRAINT: 10
+CTS_CLK_BUFFERS:
+  - gf180mcu_fd_sc_mcu7t5v0__clkbuf_1
+  - gf180mcu_fd_sc_mcu7t5v0__clkbuf_4
+
+# Margins.
+TOP_MARGIN_MULT: 2
+BOTTOM_MARGIN_MULT: 2
+LEFT_MARGIN_MULT: 10
+RIGHT_MARGIN_MULT: 10
+
+# Advanced LibreLane routing and placement tweaks (from wafer-space template)
+GRT_ALLOW_CONGESTION: true
+GRT_ANTENNA_REPAIR_MARGIN: 50
+PL_MAX_DISPLACEMENT_Y: 200
+PL_RESIZER_HOLD_SLACK_MARGIN: 0.35
+GRT_RESIZER_HOLD_SLACK_MARGIN: 0.3
