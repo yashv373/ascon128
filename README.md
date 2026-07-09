@@ -1,4 +1,6 @@
 # ascon128
+- main repository: https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main
+
 - ASCON AEAD128a Cryptographic ASIC Hardware Accelerator
 - part of the IEEE SSCS Chipathon Pico 2026 - Track A ( [project proposal](https://docs.google.com/document/d/e/2PACX-1vQ7hXiJkHFsaxKhHVbuH3Zd8qZDoJdL6WpXG3n53tD7aNz_2QSCsUlUvai5AVLdPrBWiSDReBhnfogW/pub) )
 - Target Node: Global Foundries 180 nm PDK 
