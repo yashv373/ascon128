@@ -27,9 +27,11 @@
 
 <img width="2352" height="480" alt="image" src="https://github.com/user-attachments/assets/314551d8-5433-46fe-82a8-d775ba6bbfe2" style="width:50%;"/>
 
-| Name              | Discord name  | Affiliation                       | Role                  | Experience                            |
-| ----------------- | ------------- | --------------------------------- | --------------------- | ------------------------------------- |
-| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                       | Team Lead             | Ph.D. Research Scholar / Postgraduate |
-| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics | Team Member           | Undergraduate (III)                   |
-| Tarun R S         | tarun_rs05    | IIIT, Bangalore                   | Team Member           | Undergraduate (II)                    |
-| Harshitha Shetty  | harshi070852  | PESIT, Bangalore                  | Team Member           | Undergraduate (IV)                    |
+## Team
+
+| Name              | Discord name  | Affiliation                       | Role         | Experience                            | Contribution                                                                          |
+| ----------------- | ------------- | ---------------------------------- | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
+| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Team Management             |
+| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via Librelane + Documentation + GitHub VCS and Docs |
+| Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS                                                                |
+| Harshitha Shetty  | harshi070852  | PESIT, Bangalore                   | Team Member  | Undergraduate (IV)                     | AXI-Lite Wrapper Design                                                                 |
