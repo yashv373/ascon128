@@ -13,7 +13,8 @@
 
 <img width="1572" height="947" alt="image" src="https://github.com/user-attachments/assets/b79b7ea6-8809-40c1-ab1f-1d4afa3f4beb" />
 
-
+Our objective was to finalize the physical layout of an ASCON-128 crypto core using the OpenROAD toolchain, but our initial attempts resulted in over 1,600 routing errors. The root of the problem was a negative loop: the software kept inserting buffers to fix timing delays and diodes to fix electrical antenna rules, which crowded the layout so much that the router had no physical space left to connect the pins. We broke this cycle by actually shrinking the die size from 1,100 to 850 micrometers. This change shortened the wires, naturally reducing the antenna issues and tightening the timing, which meant the tool didn't need to insert all those extra components to begin with. To resolve the one remaining antenna error, we restricted the tool from using its smallest logic cells; forcing it to use slightly larger gates balanced the wire-to-gate area ratio without cluttering the layout with more diodes. Ultimately, these structural changes resulted in a perfectly clean design with zero timing, routing, or physical errors.
+ 
 ---
 
  <img width="1289" height="908" alt="image" src="https://github.com/user-attachments/assets/3832f543-969b-481a-a90d-0af6822903b7" />
