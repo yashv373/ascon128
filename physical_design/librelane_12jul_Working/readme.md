@@ -1,5 +1,4 @@
-# ASCON-128 Cryptographic Accelerator — GF180MCU Core PD Signoff  
-
+# ASCON-128 Cryptographic Accelerator Core — GF180MCU Physical Design @ 25 MHz
 - **Design:** `ascon_core_adpt_encdec`
 - **PDK:** GlobalFoundries GF180MCU (180nm, 5V CMOS)
 - **Standard Cell Library:** `gf180mcu_fd_sc_mcu7t5v0` (7-track, 5V)
