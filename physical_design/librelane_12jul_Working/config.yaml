@@ -1,10 +1,5 @@
 # GF180MCU LibreLane config -- ASCON 128 Core
-# ============================================================
-# STRUCTURAL FIX (July 2026): Three root causes identified:
-#   1. EXTRA_EXCLUDED_CELLS was broken (regex vs glob mismatch)
-#   2. Die was 4x too large (1100um for a 500um design)
-#   3. DELAY 0 synthesis created fast paths that needed massive hold padding
-# ============================================================
+ 
 meta:
   version: 3
   flow: Classic
@@ -64,16 +59,7 @@ STA_CORNERS:
   - nom_tt_025C_3v30
   - max_ss_125C_3v00
   - min_ff_n40C_3v60
-
-# ============================================================
-# FIX #2: Shrink die from 1100x1100 to 550x550.
-#
-# With ~7500 logic + 600 FFs = ~380,000 um^2 cell area,
-# 550x550 = 302,500 um^2 gives ~80% utilization.
-# This cuts wire lengths by ~2x, eliminating most antenna
-# violations at the source and compacting the clock tree
-# to reduce hold violations.
-# ============================================================
+ 
 FP_SIZING: absolute
 DIE_AREA: [0.0, 0.0, 850.0, 850.0]
 
@@ -92,9 +78,7 @@ RT_CLOCK_MIN_LAYER: Metal3
 RT_CLOCK_MAX_LAYER: Metal5
 PDN_MULTILAYER: false
 
-# Antenna repair: let both GRT and DRT fix antennas normally.
-# With a compact die, there's room for diodes and short wires
-# mean fewer violations in the first place.
+# Antenna repair:  
 RUN_ANTENNA_REPAIR: true
 RUN_HEURISTIC_DIODE_INSERTION: false
 RUN_POST_GRT_DESIGN_REPAIR: true
@@ -104,7 +88,7 @@ GRT_ANTENNA_REPAIR_ITERS: 10
 
 
 # Power distribution network
-# Tighter pitch for smaller die
+ 
 PDN_VWIDTH: 5
 PDN_HWIDTH: 5
 PDN_VSPACING: 1
