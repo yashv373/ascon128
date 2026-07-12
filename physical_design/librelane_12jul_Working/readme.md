@@ -8,6 +8,11 @@
 - **Date:** 12 July 2026
 - **Engineer:** Yashvardhan Singh
 
+- 3d viewing link: https://gds-viewer.tinytapeout.com/?pdk=gf180mcuD&model=https%3A%2F%2Fyashv373.github.io%2Fascon128%2Fphysical_design%2Flibrelane_12jul_Working%2Fdeliverables%2Fascon_core_adpt_encdec.gds
+
+<img width="1572" height="947" alt="image" src="https://github.com/user-attachments/assets/b79b7ea6-8809-40c1-ab1f-1d4afa3f4beb" />
+
+
 ---
 
  <img width="1289" height="908" alt="image" src="https://github.com/user-attachments/assets/3832f543-969b-481a-a90d-0af6822903b7" />
