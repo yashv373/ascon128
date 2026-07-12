@@ -1,6 +1,5 @@
 # ASCON 128 Core Constraints SDC
-# Cleaned up: removed unnecessary workarounds
-
+ 
 set_units -time 1.0ns
 set_units -capacitance 1.0pF
 
@@ -63,5 +62,5 @@ if { [info exists ::env(OPENLANE_SDC_IDEAL_CLOCKS)] && $::env(OPENLANE_SDC_IDEAL
 }
 
 # Mark rst_n as a false path so the resizer doesn't try to buffer it
-# (async reset doesn't need timing closure)
+ 
 set_false_path -from [get_ports rst_n]
