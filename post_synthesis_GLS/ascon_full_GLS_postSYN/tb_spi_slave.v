@@ -68,11 +68,15 @@ module tb_spi_slave;
     endtask
     task load_tag(input [31:0] t0,input [31:0] t1,input [31:0] t2,input [31:0] t3);
     begin wr(7'h50,t0); wr(7'h54,t1); wr(7'h58,t2); wr(7'h5C,t3); end endtask
+
+    // Updated start_op: Pre-sets ad_empty and dec_mode so CDC synchronizers settle before start=1
     task start_op(input dec, input adempty);
     begin
-        wr(7'h20, {29'd0, adempty, dec, 1'b1});
-        wr(7'h20, {29'd0, adempty, dec, 1'b0});
+        wr(7'h20, {29'd0, adempty, dec, 1'b0}); // Pre-set config flags
+        wr(7'h20, {29'd0, adempty, dec, 1'b1}); // Pulse start=1
+        wr(7'h20, {29'd0, adempty, dec, 1'b0}); // Clear start=0
     end endtask
+
     task push(input sel, input last, input [4:0] nbytes,
               input [31:0] d0,input [31:0] d1,input [31:0] d2,input [31:0] d3);
     begin
@@ -115,7 +119,7 @@ module tb_spi_slave;
 
         $display("\n[CASE2] encrypt AD-only (13B)");
         load_kn; start_op(1'b0,1'b0);
-        push(1'b0,1'b1,5'd13, 32'h64616568,32'h642d7265,32'h21617461,32'h00000021);
+        push(1 me=1'b0,1'b1,5'd13, 32'h64616568,32'h642d7265,32'h21617461,32'h00000021);
         push(1'b1,1'b1,5'd0, 32'h00000000,32'h00000000,32'h00000000,32'h00000000);
         check_tag(32'h83b1a67b,32'heb6b5504,32'hb0e4af81,32'h506c9b4e);
 
