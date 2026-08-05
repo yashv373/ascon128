@@ -19,10 +19,11 @@ module tb_spi_slave;      // tb_spi_master.v
 
     always #3.90625 clk_128 = ~clk_128;      // ~128 MHz PLL output
 
-    // derived clocks : note fsclk = fclk/32
-    wire clk, sclk;
+    wire clk, sclk_raw;
+    wire sclk;
     clk_divider #(.DIV(128))  u_dclk  (.clk_in(clk_128), .rst_n(rst_n), .clk_out(clk));    // clk will be 128MHz/128 = 1MHz
-    clk_divider #(.DIV(4096)) u_dsclk (.clk_in(clk_128), .rst_n(rst_n), .clk_out(sclk));   // sclk will be 128MHz/4096 = 31.25KHz
+    clk_divider #(.DIV(4096)) u_dsclk (.clk_in(clk_128), .rst_n(rst_n), .clk_out(sclk_raw));   // sclk will be 128MHz/4096 = 31.25KHz
+    assign #5 sclk = sclk_raw; // 5 ns skew to eliminate 0-ps race between clk & sclk in gate-level SDF simulation
 
 
 
