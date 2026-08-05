@@ -1,19 +1,9 @@
 // ============================================================================
-// tb_spi_master.v  -  Full-chip integration test with REAL derived clocks and
+// tb_spi_slave.v  -  Full-chip integration test with REAL derived clocks and
 // a FREE-RUNNING sclk master.
-//
-//   128 MHz PLL --clk_divider--> clk  = 32 MHz  (chip core)
-//               --clk_divider--> sclk = 1  MHz  (free-running SPI bit clock)
-//   spi_master (runs on sclk) drives spi_slave (runs on clk + sclk) through all
-//   six cases. 40-bit frames @ 1 MHz -> 40 us/frame, ~25 kHz word rate.
-//   Simulation spans several ms of sim time (as requested).
-//
-//   iverilog -o sim clk_divider.v ascon_round_s1.v ascon_round_s2.v ascon_core.v \
-//        axi_ascon.v axi_master.v reset_sync.v spi_slave.v spi_master.v tb_spi_master.v
-//   vvp sim
 // ============================================================================
 `timescale 1ns/1ps
-module tb_spi_slave;      // tb_spi_master.v 
+module tb_spi_slave;
     reg clk_128=0, rst_n=0;
     integer errors=0; reg [31:0] v;
 
@@ -21,13 +11,9 @@ module tb_spi_slave;      // tb_spi_master.v
 
     wire clk, sclk_raw;
     wire sclk;
-    clk_divider #(.DIV(128))  u_dclk  (.clk_in(clk_128), .rst_n(rst_n), .clk_out(clk));    // clk will be 128MHz/128 = 1MHz
-    clk_divider #(.DIV(4096)) u_dsclk (.clk_in(clk_128), .rst_n(rst_n), .clk_out(sclk_raw));   // sclk will be 128MHz/4096 = 31.25KHz
+    clk_divider #(.DIV(128))  u_dclk  (.clk_in(clk_128), .rst_n(rst_n), .clk_out(clk));      // clk = 1 MHz
+    clk_divider #(.DIV(4096)) u_dsclk (.clk_in(clk_128), .rst_n(rst_n), .clk_out(sclk_raw)); // sclk = 31.25 kHz
     assign #5 sclk = sclk_raw; // 5 ns skew to eliminate 0-ps race between clk & sclk in gate-level SDF simulation
-
-
-
-
 
     // master command interface (sclk domain)
     reg        mstart=0, mrw=0;
@@ -35,7 +21,7 @@ module tb_spi_slave;      // tb_spi_master.v
     reg [31:0] mwdata=0;
     wire       mbusy, mdone;
     wire [31:0] mrdata;
-    wire sclk_w ;
+    wire sclk_w;
     assign sclk_w = sclk;
     wire  mosi, miso, cs_n;
 
@@ -82,12 +68,11 @@ module tb_spi_slave;      // tb_spi_master.v
     endtask
     task load_tag(input [31:0] t0,input [31:0] t1,input [31:0] t2,input [31:0] t3);
     begin wr(7'h50,t0); wr(7'h54,t1); wr(7'h58,t2); wr(7'h5C,t3); end endtask
-   task start_op(input dec, input adempty);
-begin
-    wr(7'h20, {29'd0, adempty, dec, 1'b1}); // Assert start=1
-    wr(7'h20, {29'd0, adempty, dec, 1'b0}); // Clear start=0
-end
-endtask
+    task start_op(input dec, input adempty);
+    begin
+        wr(7'h20, {29'd0, adempty, dec, 1'b1});
+        wr(7'h20, {29'd0, adempty, dec, 1'b0});
+    end endtask
     task push(input sel, input last, input [4:0] nbytes,
               input [31:0] d0,input [31:0] d1,input [31:0] d2,input [31:0] d3);
     begin
@@ -119,7 +104,6 @@ endtask
     endtask
 
     initial begin
-     //   $dumpfile("tb_spi_master.vcd"); $dumpvars(0,tb_spi_master);
         #1000;
         rst_n=0; #2000; rst_n=1;
         repeat(6) @(posedge sclk);          // let both reset synchronizers release
