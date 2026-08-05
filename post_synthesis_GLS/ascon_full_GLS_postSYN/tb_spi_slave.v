@@ -73,6 +73,7 @@ module tb_spi_slave;
     task start_op(input dec, input adempty);
     begin
         wr(7'h20, {29'd0, adempty, dec, 1'b0});
+        repeat(5) @(posedge sclk);
         wr(7'h20, {29'd0, adempty, dec, 1'b1});
         wr(7'h20, {29'd0, adempty, dec, 1'b0});
     end endtask
