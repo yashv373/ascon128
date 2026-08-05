@@ -82,12 +82,12 @@ module tb_spi_slave;      // tb_spi_master.v
     endtask
     task load_tag(input [31:0] t0,input [31:0] t1,input [31:0] t2,input [31:0] t3);
     begin wr(7'h50,t0); wr(7'h54,t1); wr(7'h58,t2); wr(7'h5C,t3); end endtask
-    task start_op(input dec, input adempty);
-    begin
-        wr(7'h20, {29'd0, adempty, dec, 1'b0});
-        wr(7'h20, {29'd0, adempty, dec, 1'b1});
-        wr(7'h20, {29'd0, adempty, dec, 1'b0});
-    end endtask
+   task start_op(input dec, input adempty);
+begin
+    wr(7'h20, {29'd0, adempty, dec, 1'b1}); // Assert start=1
+    wr(7'h20, {29'd0, adempty, dec, 1'b0}); // Clear start=0
+end
+endtask
     task push(input sel, input last, input [4:0] nbytes,
               input [31:0] d0,input [31:0] d1,input [31:0] d2,input [31:0] d3);
     begin
