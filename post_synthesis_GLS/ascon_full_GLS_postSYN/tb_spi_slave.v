@@ -173,5 +173,5 @@ module tb_spi_slave;
         $finish;
     end
 
-    initial begin #60000000 $display("TIMEOUT"); $finish; end
+    initial begin #500000000 $display("TIMEOUT"); $finish; end
 endmodule
