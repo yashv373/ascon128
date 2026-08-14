@@ -100,7 +100,16 @@ ascon128/
 
 | Name              | Discord name  | Affiliation                       | Role         | Experience                            | Contribution                                                                          |
 | ----------------- | ------------- | ---------------------------------- | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Team Management             |
-| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via Librelane + Documentation + GitHub VCS and Docs |
-| Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS                                                                |
+| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Chip-Top Integration (Design, Verification, GLS, Initial PD runs) + Team Management |
+| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via LibreLane + Chip-Top PD (Max-Cap & Slew Violation Fixes) + Standalone DRC & LVS Runs + Documentation + GitHub VCS and Docs |
+| Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS + ERC & OEB Checks                                            |
 | Harshitha Shetty  | harshi070852  | PESIT, Bangalore                   | Team Member  | Undergraduate (IV)                     | AXI-Lite Wrapper Design                                                                 |
+
+### Chip-Top Integration Contributions
+
+| Task | Owner |
+|------|-------|
+| Chip-top integrated ASCON core — design, verification, GLS, initial PD runs | Lakshmi K Iyer |
+| Chip-top PD — resolving max capacitance violations & slew problems | Yashvardhan Singh |
+| Standalone DRC & LVS runs for final layout verification | Yashvardhan Singh |
+| ERC & OEB checks | Tarun R S |
