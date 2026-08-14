@@ -51,6 +51,7 @@ chip_top (padring + I/O pads)
 - **Target**: GF180MCU padring via LibreLane (workshop slot)
 
 The chip-top integration files (SPI slave top module, AXI integration, padring RTL, hardened macro with GDS/LEF/LIB/SPEF, and LibreLane run results) are in [`chip_top_integration/`](https://github.com/yashv373/ascon128/tree/main/chip_top_integration).
+<img width="831" height="847" alt="image" src="https://github.com/user-attachments/assets/ee06b803-55ea-4305-a3aa-96255081274d" />
 
 ---
 
