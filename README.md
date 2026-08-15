@@ -82,6 +82,34 @@ chip_top (padring + I/O pads)
 
 ---
 
+## 📅 Project Timeline
+
+```mermaid
+timeline
+    title ASCON AEAD 128: Development Timeline
+    section May 2026
+        May 19 : Finalize Domain (Team)
+        May 26 : ASCON Idea Finalized (Team)
+    section Jun 2026
+        Jun 02 : Proposal Documentation (Yash & Lakshmi)
+        Jun 04 : ASCON Core RTL (Lakshmi & Tarun)
+        Jun 09 : Core RTL Verification (Yash)
+        Jun 11 : Proposal Presentation (Lakshmi)
+        Jun 29 : Core Post-Syn Timing (Yash)
+        Jun 30 : SPI & AXI-LITE RTL (Lakshmi)
+    section Jul 2026
+        Jul 04 : Schematic Review (Lakshmi)
+        Jul 06 : NIST KAT Verification (Yash)
+        Jul 12 : Core LibreLane PD (Yash)
+    section Aug 2026
+        Aug 02 : Full Chip PD (Lakshmi, Yash, Tarun)
+        Aug 08 : DRC & LVS Checks (Lakshmi, Yash)
+        Aug 10 : Layout Review Submission (Lakshmi, Yash)
+        Aug 14 : Padring Integration (Lakshmi)
+```
+
+---
+
 ## 📂 Repository Structure
 
 ```text
