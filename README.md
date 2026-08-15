@@ -161,8 +161,8 @@ ascon128/
 </div>
 <br>
 
-| Name | Discord | Affiliation | Role | Experience | Key Contributions |
-|---|---|---|---|---|---|
-| **Lakshmi K Iyer** | `lakvlsi_90908` | IIT, Bombay | Team Lead | Ph.D. Research Scholar | RTL Core Design & Architecture, Interface RTL, Chip-Top Integration (Design, Verification, GLS, Initial PD), Team Management |
-| **Yashvardhan Singh** | `zysteresis` | MIT, Manipal / STMicroelectronics | Team Member | Undergraduate (III) | Design/Post-Synth Verification, PD via LibreLane, Chip-Top PD (Max-Cap/Slew Fixes), Standalone DRC/LVS, IP-XACT Packaging & Assembly, Documentation & VCS |
-| **Tarun R S** | `tarun_rs05` | IIIT, Bangalore | Team Member | Undergraduate (II) | RTL Design, PD via ORFS, ERC & OEB Checks |
+| Photo | Name | Discord | Affiliation | Role | Experience | Key Contributions |
+|:---:|---|---|---|---|---|---|
+| <img src="assets/lakshmi.png" width="100" style="border-radius: 50%;"/> | **Lakshmi K Iyer** | `lakvlsi_90908` | <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/IIT_Bombay_Logo.svg/120px-IIT_Bombay_Logo.svg.png" width="80"/><br>IIT, Bombay | Team Lead | Ph.D. Research Scholar | RTL Core Design & Architecture, Interface RTL, Chip-Top Integration (Design, Verification, GLS, Initial PD), Team Management |
+| <img src="assets/yashvardhan.png" width="100" style="border-radius: 50%;"/> | **Yashvardhan Singh** | `zysteresis` | <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Manipal_Institute_of_Technology_logo.svg/120px-Manipal_Institute_of_Technology_logo.svg.png" width="40"/> &nbsp; <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/STMicroelectronics_logo.svg/120px-STMicroelectronics_logo.svg.png" width="60"/><br>MIT, Manipal / STMicroelectronics | Team Member | Undergraduate (III) | Design/Post-Synth Verification, PD via LibreLane, Chip-Top PD (Max-Cap/Slew Fixes), Standalone DRC/LVS, IP-XACT Packaging & Assembly, Documentation & VCS |
+| <img src="assets/tarun.png" width="100" style="border-radius: 50%;"/> | **Tarun R S** | `tarun_rs05` | <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/75/IIIT_Bangalore_Logo.svg/120px-IIIT_Bangalore_Logo.svg.png" width="80"/><br>IIIT, Bangalore | Team Member | Undergraduate (II) | RTL Design, PD via ORFS, ERC & OEB Checks |
