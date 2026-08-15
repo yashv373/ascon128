@@ -68,7 +68,7 @@ To substantiate the lightweight nature of the design, the final Power, Performan
 | **Core Area** | ~7.69 mm² |
 | **Total Power** | 319.48 µW |
 
-*(Note: Initial physical design exploration was performed using ORFS, but a deliberate pivot to LibreLane was made to resolve software compliance issues encountered with the design.)*
+*(Note: Initial physical design exploration was performed using ORFS, but a deliberate pivot to LibreLane was made to resolve software compliance issues encountered.)*
 
 The chip is structured as follows:
 
