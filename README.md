@@ -15,7 +15,11 @@
 
 ## 📖 Overview
 
+> **Repository Note**: This is Yashvardhan's personal portfolio repository containing the IP-XACT packaged version and presentation structure. The [Main Organization Repository](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main) contains the team presentation files, and the [Padring Fork](https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main) contains the official competition submission artifacts.
+
 Team CryptoAccel proposes a lightweight hardware accelerator implementing the **ASCON-AEAD128a** authenticated encryption algorithm, standardized by NIST ([SP 800-232](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.pdf)). It is designed for resource-constrained applications such as IoT security, secure boot, and root-of-trust.
+
+> **Security Scope**: While this implementation focuses on core functionality and low area, providing protection against side-channel attacks (e.g., timing and Simple Power Analysis on permutation rounds) was scoped as a future enhancement and omitted due to tapeout compliance constraints and the limited event timeline.
 
 This accelerator is built in synthesizable Verilog and taken through a complete open-source RTL-to-GDSII flow using an open-source toolchain targeting the **GlobalFoundries 180nm (GF180MCU)** process.
 
@@ -23,7 +27,7 @@ This accelerator is built in synthesizable Verilog and taken through a complete 
 - **Event**: IEEE SSCS Chipathon Pico 2026 (Track A)
 - **Target Node**: Global Foundries 180 nm PDK
 - **Proposal Rank**: 2nd out of 35 (Score: 3.17/4.0)
-- **Schematic Review**: Unconditional GO (Score: 10/15)
+- **Schematic Review**: Unconditional GO
 - **Repositories**: 
   - [Main Repository](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main)
   - [Padring Integration Repository](https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main)
@@ -52,7 +56,21 @@ This accelerator is built in synthesizable Verilog and taken through a complete 
 </div>
 
 ### Final Chip Summary
-The final integrated chip runs at **16 MHz** and is structured as follows:
+The final integrated chip operates at **16 MHz**. This frequency was deliberately determined after extensive LibreLane try-and-observe iterations to achieve clean timing signoff in the presence of strict Physical Design constraints.
+
+#### Full Chip PPA Metrics (Padring Integrated)
+To substantiate the lightweight nature of the design, the final Power, Performance, and Area (PPA) metrics extracted via LibreLane are as follows:
+
+| Metric | Value |
+| :--- | :--- |
+| **Operating Frequency** | 16 MHz |
+| **Cell Count (Instances)** | 67,268 |
+| **Core Area** | ~7.69 mm² |
+| **Total Power** | 319.48 µW |
+
+*(Note: Initial physical design exploration was performed using ORFS, but a deliberate pivot to LibreLane was made to resolve software compliance issues encountered with the design.)*
+
+The chip is structured as follows:
 
 ```text
 chip_top (padring + I/O pads)
@@ -134,8 +152,8 @@ ascon128/
 │   └── Coco_TB_trial/             # Cocotb-based GLS
 │
 ├── physical_design/               # Physical design runs via LibreLane
-│   ├── LibreLane_4jul/            # Early run
-│   └── librelane_12jul_Working/   # Working run with deliverables
+│   ├── LibreLane_4jul/            # Early exploratory run
+│   └── core_timing_signoff/       # Final timing signoff for the ASCON core (formerly librelane_12Jul_working)
 │
 ├── chip_top_integration/          # Final chip-level integration (from padring repo)
 │   ├── src_cryptoaccel/           # SPI slave, AXI wrapper, ASCON core RTL, OpenLane config
