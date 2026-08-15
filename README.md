@@ -87,6 +87,8 @@ ascon128/
 │   ├── gds_Cryptoaccel/           # GDS output (dry run)
 │   └── librelane_cryptoaccel/     # LibreLane run results & metrics
 │
+├── ip_pkg_assembly/               # IP-XACT component packaging & SoC assembly via Kactus2
+│
 ├── ascon_core_adpt_encdec.gds     # Core GDS (standalone)
 ├── ascon_core_adpt_encdec.lef     # Core LEF (standalone)
 ├── ascon_core_adpt_encdec.nl.v    # Core netlist (standalone)
@@ -102,7 +104,7 @@ ascon128/
 | Name              | Discord name  | Affiliation                       | Role         | Experience                            | Contribution                                                                          |
 | ----------------- | ------------- | ---------------------------------- | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
 | Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Chip-Top Integration (Design, Verification, GLS, Initial PD runs) + Team Management |
-| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via LibreLane + Chip-Top PD (Max-Cap & Slew Violation Fixes) + Standalone DRC & LVS Runs + Documentation + GitHub VCS and Docs |
+| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via LibreLane + Chip-Top PD (Max-Cap & Slew Violation Fixes) + Standalone DRC & LVS Runs + Documentation + GitHub VCS and Docs + IP Packaging and Assembly |
 | Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS + ERC & OEB Checks                                            |
  
 
@@ -112,5 +114,6 @@ ascon128/
 |------|-------|
 | Chip-top integrated ASCON core — design, verification, GLS, initial PD runs | Lakshmi K Iyer |
 | Chip-top PD — resolving max capacitance violations & slew problems | Yashvardhan Singh |
+| IP-XACT component packaging and SoC assembly | Yashvardhan Singh |
 | Standalone DRC & LVS runs for final layout verification | Yashvardhan Singh |
 | ERC & OEB checks | Tarun R S |
