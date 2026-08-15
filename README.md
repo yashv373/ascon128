@@ -146,9 +146,6 @@ ascon128/
 │
 ├── ip_pkg_assembly/               # IP-XACT component packaging & SoC assembly via Kactus2
 │
-├── ascon_core_adpt_encdec.gds     # Core GDS (standalone)
-├── ascon_core_adpt_encdec.lef     # Core LEF (standalone)
-├── ascon_core_adpt_encdec.nl.v    # Core netlist (standalone)
 └── README.md
 ```
 
