@@ -91,9 +91,9 @@ chip_top (padring + I/O pads)
 
 ### Physical Layouts
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ee06b803-55ea-4305-a3aa-96255081274d" width="45%" alt="Core GDS (Without Padring)">
+  <img src="assets/gds_core.png" width="45%" alt="Core GDS (Without Padring)">
   &nbsp; &nbsp; &nbsp;
-  <img src="https://github.com/user-attachments/assets/bf4ee813-d1ad-4829-b96e-437983183dff" width="45%" alt="Full Chip GDS (With Padring)">
+  <img src="assets/gds_chip_top.png" width="45%" alt="Full Chip GDS (With Padring)">
   <br>
   <em>Left: Hardened ASCON Macro &nbsp; | &nbsp; Right: Full Chip Integrated with GF180 Padring</em>
 </p>
