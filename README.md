@@ -108,12 +108,4 @@ ascon128/
 | Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS + ERC & OEB Checks                                            |
  
 
-### Chip-Top Integration Contributions
-
-| Task | Owner |
-|------|-------|
-| Chip-top integrated ASCON core — design, verification, GLS, initial PD runs | Lakshmi K Iyer |
-| Chip-top PD — resolving max capacitance violations & slew problems | Yashvardhan Singh |
-| IP-XACT component packaging and SoC assembly | Yashvardhan Singh |
-| Standalone DRC & LVS runs for final layout verification | Yashvardhan Singh |
-| ERC & OEB checks | Tarun R S |
+ 
