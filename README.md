@@ -1,39 +1,60 @@
-# ascon128
-- main repository: https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main
-- padring integration repository: https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main
+<div align="center">
+  <img alt="cryptoaccel_logo" src="https://github.com/user-attachments/assets/9e05458b-7662-42a9-9287-e7aeeaf4b6a3" width="70%" />
 
-- ASCON AEAD128a Cryptographic ASIC Hardware Accelerator
-- part of the IEEE SSCS Chipathon Pico 2026 - Track A ( [project proposal](https://docs.google.com/document/d/e/2PACX-1vQ7hXiJkHFsaxKhHVbuH3Zd8qZDoJdL6WpXG3n53tD7aNz_2QSCsUlUvai5AVLdPrBWiSDReBhnfogW/pub) )
-- Target Node: Global Foundries 180 nm PDK 
-- Team Name: CryptoAccel ( A-10 )
-- Proposal Review Result: score 3.17/4 , rank - 02/35 -- track A
-- Schematic Review Result: Unconditional Go from judges -- 10/15
+  # Team CryptoAccel: ASCON AEAD128a Hardware Accelerator
+  
+  ![Chipathon](https://img.shields.io/badge/IEEE_SSCS-PICO_Chipathon_2026-blue)
+  ![Track](https://img.shields.io/badge/Track-A-orange)
+  ![PDK](https://img.shields.io/badge/PDK-GF180MCU-green)
+  ![Algorithm](https://img.shields.io/badge/Algorithm-ASCON--AEAD128a-purple)
+  ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+  ![Status](https://img.shields.io/badge/Status-In_Progress-yellow)
+</div>
+
+<br>
+
+## 📖 Overview
+
+Team CryptoAccel proposes a lightweight hardware accelerator implementing the **ASCON-AEAD128a** authenticated encryption algorithm, standardized by NIST ([SP 800-232](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.pdf)). It is designed for resource-constrained applications such as IoT security, secure boot, and root-of-trust.
+
+This accelerator is built in synthesizable Verilog and taken through a complete open-source RTL-to-GDSII flow using an open-source toolchain targeting the **GlobalFoundries 180nm (GF180MCU)** process.
+
+### 🏆 Project Highlights
+- **Event**: IEEE SSCS Chipathon Pico 2026 (Track A)
+- **Target Node**: Global Foundries 180 nm PDK
+- **Proposal Rank**: 2nd out of 35 (Score: 3.17/4.0)
+- **Schematic Review**: Unconditional GO (Score: 10/15)
+- **Repositories**: 
+  - [Main Repository](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main)
+  - [Padring Integration Repository](https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main)
+
 ---
 
-<img width="2048" height="1473" alt="image" src="https://github.com/user-attachments/assets/420a6632-c3ed-4a0d-82ad-7331dc9077f0" style="width:50%;"/>
+## 🔗 Resources & Links
 
----
-## Repo Structure:
-
-- Specification: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.pdf
-
-- Architecture: 
-<img width="1652" height="1218" alt="image" src="https://github.com/user-attachments/assets/2280f3b1-ffab-4a0d-9cd7-6b3d6e7fe034" style="width:50%;"/>
-
-
-- RTL Design & Verification: https://github.com/yashv373/ascon128/tree/main/RTL_Design_Verification
-- Synthesis: https://github.com/yashv373/ascon128/tree/main/synthesis
-- Post Synthesis Verification: https://github.com/yashv373/ascon128/tree/main/post_synthesis_GLS
-- Physical Design via LibreLane: https://github.com/yashv373/ascon128/tree/main/physical_design
-- Chip-Top Integration (Padring + SPI + AXI): https://github.com/yashv373/ascon128/tree/main/chip_top_integration
+| Resource | Link |
+|----------|------|
+| 📄 **Project Proposal** | [View Document ↗](https://docs.google.com/document/d/e/2PACX-1vQ7hXiJkHFsaxKhHVbuH3Zd8qZDoJdL6WpXG3n53tD7aNz_2QSCsUlUvai5AVLdPrBWiSDReBhnfogW/pub) |
+| 🐛 **GitHub Issue** | [View Issue #44 ↗](https://github.com/sscs-ose/sscs-chipathon-2026/issues/44) |
+| 📊 **Progress Tracker** | [View Tracker ↗](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/blob/main/Progress%20Tracker/readme.md) |
+| 🎥 **Proposal Presentation** | [Watch on YouTube ↗](https://youtu.be/4pfbP2isbxA?si=O9V1pwiTxTNE5hqo) |
+| 🎥 **Schematic Review Video** | [Watch on Drive ↗](https://drive.google.com/file/d/1Om1IALZSBtE1XGMmxLGU7RnFuSFpBlrm/view) |
+| 🎥 **Layout Review Video** | [Watch on Drive ↗](https://drive.google.com/file/d/1Z2raVcPt4EsP0nf7BELFfiN4O5xUtK46/view) |
 
 ---
 
-## Final Chip Summary
+## 🏗️ Architecture & Implementation
 
-The final integrated chip runs at **16 MHz** with the following top-level hierarchy:
+<div align="center">
+  <img alt="System Architecture" src="https://github.com/user-attachments/assets/2280f3b1-ffab-4a0d-9cd7-6b3d6e7fe034" width="70%"/>
+  <br>
+  <em>ASCON Core Architecture</em>
+</div>
 
-```
+### Final Chip Summary
+The final integrated chip runs at **16 MHz** and is structured as follows:
+
+```text
 chip_top (padring + I/O pads)
   └── chip_core
        └── spi_slave (top module)
@@ -45,17 +66,25 @@ chip_top (padring + I/O pads)
             └── reset_sync
 ```
 
-- **Interface**: SPI slave — communicates with external MCU/FPGA master
-- **Internal bus**: AXI-Lite — connects SPI frontend to ASCON crypto backend
-- **Crypto core**: ASCON-AEAD128a — full encryption + decryption + tag verification
-- **Target**: GF180MCU padring via LibreLane (workshop slot)
+- **Interface**: SPI slave (communicates with external MCU/FPGA master)
+- **Internal Bus**: AXI-Lite (connects SPI frontend to ASCON crypto backend)
+- **Crypto Core**: ASCON-AEAD128a (full encryption, decryption, and tag verification)
+- **Target**: GF180MCU padring via LibreLane
 
-The chip-top integration files (SPI slave top module, AXI integration, padring RTL, hardened macro with GDS/LEF/LIB/SPEF, and LibreLane run results) are in [`chip_top_integration/`](https://github.com/yashv373/ascon128/tree/main/chip_top_integration).
-<img width="831" height="847" alt="image" src="https://github.com/user-attachments/assets/ee06b803-55ea-4305-a3aa-96255081274d" />
+### Physical Layouts
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ee06b803-55ea-4305-a3aa-96255081274d" width="45%" alt="Core GDS (Without Padring)">
+  &nbsp; &nbsp; &nbsp;
+  <img src="https://github.com/user-attachments/assets/bf4ee813-d1ad-4829-b96e-437983183dff" width="45%" alt="Full Chip GDS (With Padring)">
+  <br>
+  <em>Left: Hardened ASCON Macro &nbsp; | &nbsp; Right: Full Chip Integrated with GF180 Padring</em>
+</p>
 
 ---
 
-```
+## 📂 Repository Structure
+
+```text
 ascon128/
 ├── RTL_Design_Verification/       # ASCON core RTL design & cocotb/Verilog testbenches
 │   ├── design/
@@ -97,23 +126,15 @@ ascon128/
 
 ---
 
-<img width="2352" height="480" alt="image" src="https://github.com/user-attachments/assets/314551d8-5433-46fe-82a8-d775ba6bbfe2" style="width:50%;"/>
+## 👥 The Team
 
-## Team
+<div align="center">
+  <img alt="Team Logo" src="https://github.com/user-attachments/assets/314551d8-5433-46fe-82a8-d775ba6bbfe2" width="60%"/>
+</div>
+<br>
 
-| Name              | Discord name  | Affiliation                       | Role         | Experience                            | Contribution                                                                          |
-| ----------------- | ------------- | ---------------------------------- | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Chip-Top Integration (Design, Verification, GLS, Initial PD runs) + Team Management |
-| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via LibreLane + Chip-Top PD (Max-Cap & Slew Violation Fixes) + Standalone DRC & LVS Runs + Documentation + GitHub VCS and Docs + IP Packaging and Assembly |
-| Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS + ERC & OEB Checks                                            |
- 
-
-### Chip-Top Integration Contributions
-
-| Task | Owner |
-|------|-------|
-| Chip-top integrated ASCON core — design, verification, GLS, initial PD runs | Lakshmi K Iyer |
-| Chip-top PD — resolving max capacitance violations & slew problems | Yashvardhan Singh |
-| IP-XACT component packaging and SoC assembly | Yashvardhan Singh |
-| Standalone DRC & LVS runs for final layout verification | Yashvardhan Singh |
-| ERC & OEB checks | Tarun R S |
+| Name | Discord | Affiliation | Role | Experience | Key Contributions |
+|---|---|---|---|---|---|
+| **Lakshmi K Iyer** | `lakvlsi_90908` | IIT, Bombay | Team Lead | Ph.D. Research Scholar | RTL Core Design & Architecture, Interface RTL, Chip-Top Integration (Design, Verification, GLS, Initial PD), Team Management |
+| **Yashvardhan Singh** | `zysteresis` | MIT, Manipal / STMicroelectronics | Team Member | Undergraduate (III) | Design/Post-Synth Verification, PD via LibreLane, Chip-Top PD (Max-Cap/Slew Fixes), Standalone DRC/LVS, IP-XACT Packaging & Assembly, Documentation & VCS |
+| **Tarun R S** | `tarun_rs05` | IIIT, Bangalore | Team Member | Undergraduate (II) | RTL Design, PD via ORFS, ERC & OEB Checks |
