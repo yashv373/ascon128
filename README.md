@@ -133,19 +133,8 @@ ascon128/
 </div>
 <br>
 
-<<<<<<< HEAD
 | Name | Discord | Affiliation | Role | Experience | Key Contributions |
 |---|---|---|---|---|---|
 | **Lakshmi K Iyer** | `lakvlsi_90908` | IIT, Bombay | Team Lead | Ph.D. Research Scholar | RTL Core Design & Architecture, Interface RTL, Chip-Top Integration (Design, Verification, GLS, Initial PD), Team Management |
 | **Yashvardhan Singh** | `zysteresis` | MIT, Manipal / STMicroelectronics | Team Member | Undergraduate (III) | Design/Post-Synth Verification, PD via LibreLane, Chip-Top PD (Max-Cap/Slew Fixes), Standalone DRC/LVS, IP-XACT Packaging & Assembly, Documentation & VCS |
 | **Tarun R S** | `tarun_rs05` | IIIT, Bangalore | Team Member | Undergraduate (II) | RTL Design, PD via ORFS, ERC & OEB Checks |
-=======
-| Name              | Discord name  | Affiliation                       | Role         | Experience                            | Contribution                                                                          |
-| ----------------- | ------------- | ---------------------------------- | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| Lakshmi K Iyer    | lakvlsi_90908 | IIT, Bombay                        | Team Lead    | Ph.D. Research Scholar / Postgraduate  | RTL Core Design & Architecture + RTL Design of Interface + Chip-Top Integration (Design, Verification, GLS, Initial PD runs) + Team Management |
-| Yashvardhan Singh | zysteresis    | MIT, Manipal / STMicroelectronics  | Team Member  | Undergraduate (III)                    | Design Verification + Post-Synth Verification + PD via LibreLane + Chip-Top PD (Max-Cap & Slew Violation Fixes) + Standalone DRC & LVS Runs + Documentation + GitHub VCS and Docs + IP Packaging and Assembly |
-| Tarun R S         | tarun_rs05    | IIIT, Bangalore                    | Team Member  | Undergraduate (II)                     | RTL Design + PD via ORFS + ERC & OEB Checks                                            |
- 
-
- 
->>>>>>> a6813da3440f6c4417f9a886f87c5bd0ef463eb6
