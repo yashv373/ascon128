@@ -98,6 +98,14 @@ chip_top (padring + I/O pads)
   <em>Left: Hardened ASCON Macro &nbsp; | &nbsp; Right: Full Chip Integrated with GF180 Padring</em>
 </p>
 
+<p align="center">
+  <img src="assets/ascon_core_gds2.png" width="45%" alt="Core GDS (Stylized View)">
+  &nbsp; &nbsp; &nbsp;
+  <img src="assets/chip_top_render_4k.png" width="45%" alt="Full Chip GDS (Stylized View)">
+  <br>
+  <em>Left: ASCON Macro (Stylized Detail) &nbsp; | &nbsp; Right: Full Chip (Stylized PDN View)</em>
+</p>
+
 ---
 
 ## 📅 Project Timeline
