@@ -15,7 +15,7 @@
 
 ## 📖 Overview
 
-> **Repository Note**: This is Yashvardhan's personal portfolio repository containing the IP-XACT packaged version and presentation structure. The [Main Organization Repository](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main) contains the team presentation files, and the [Padring Fork](https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main) contains the official competition submission artifacts.
+> **Repository Note**: This is my personal portfolio repository containing the Ascon 128 AEAD Hardware Accelerator Project Files. The [Main Organization Repository](https://github.com/lakshmikiyer/SSCS_CHIPATHON_2026_CRYPTOACCEL/tree/main) contains the team presentation files and other src files, and the [Padring Fork](https://github.com/lakshmikiyer/Chipathon-2026-A10_Cryptoaccel/tree/main) contains the official competition submission artifacts as per guidelines.
 
 Team CryptoAccel proposes a lightweight hardware accelerator implementing the **ASCON-AEAD128a** authenticated encryption algorithm, standardized by NIST ([SP 800-232](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.pdf)). It is designed for resource-constrained applications such as IoT security, secure boot, and root-of-trust.
 
