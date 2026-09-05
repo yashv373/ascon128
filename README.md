@@ -106,6 +106,9 @@ chip_top (padring + I/O pads)
   <em>Left: ASCON Macro (Stylized Detail) &nbsp; | &nbsp; Right: Full Chip (Stylized PDN View)</em>
 </p>
 
+
+<img width="3000" height="1500" alt="ascon_paper_gds" src="https://github.com/user-attachments/assets/caad4e15-f1c2-4539-ac55-d18101c484ff" />
+
 ---
 
 ## 📅 Project Timeline
