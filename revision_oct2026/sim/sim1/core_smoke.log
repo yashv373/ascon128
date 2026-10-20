@@ -1,0 +1,38 @@
+NIST_KAT Count=1 match=True
+Traceback (most recent call last):
+  File "C:\Users\Asus\eda\designs\ascon_final\ascon_claude\sim\gen_case.py", line 15, in <module>
+    print('NIST_KAT Count=%s match=%s'%(d['Count'],d['CT']==(ct+tag).hex().upper()))
+                                        ~^^^^^^^^^
+KeyError: 'Count'
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_0.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_0.vvp +ADLEN=0 +PTLEN=0'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT DIN_CONSUME cyc=35
+EVT DOUT_VALID cyc=37 bytes=0
+EVT DONE cyc=63
+RESULT adlen=0 ptlen=0 start_to_done_cycles=56 errors=0 PASS
+tb_core.v:66: $finish called at 3968750 (1ps)
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_16.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_16.vvp +ADLEN=16 +PTLEN=16'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT AD_CONSUME cyc=33
+EVT AD_CONSUME cyc=50
+EVT DIN_CONSUME cyc=68
+EVT DOUT_VALID cyc=70 bytes=16
+EVT DIN_CONSUME cyc=86
+EVT DOUT_VALID cyc=88 bytes=0
+EVT DONE cyc=114
+RESULT adlen=16 ptlen=16 start_to_done_cycles=107 errors=0 PASS
+tb_core.v:66: $finish called at 7156250 (1ps)

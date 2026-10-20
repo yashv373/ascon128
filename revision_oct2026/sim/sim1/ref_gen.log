@@ -1,0 +1,4 @@
+ref: encrypt clen=16 ; decrypt(good tag) rc=0 ; decrypt(tag bit0 flipped) rc=-1
+ref: encrypt clen=1040 ; decrypt(good tag) rc=0 ; decrypt(tag bit0 flipped) rc=-1
+ref: encrypt clen=1040 ; decrypt(good tag) rc=0 ; decrypt(tag bit0 flipped) rc=-1
+ref: encrypt clen=528 ; decrypt(good tag) rc=0 ; decrypt(tag bit0 flipped) rc=-1

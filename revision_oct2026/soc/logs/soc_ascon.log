@@ -1,0 +1,39 @@
+Addressing configuration for axil_interconnect instance tb_soc.dut.u_core.u_ic
+ 0 ( 0): 00000000 / 17 -- 00000000-0001ffff
+ 1 ( 0): 40000000 / 07 -- 40000000-4000007f
+ 2 ( 0): 50000000 / 06 -- 50000000-5000003f
+ASCON SoC firmware start
+PASS T0 ASCON probe STATUS=0x00000008
+PASS T1.1 reset values: DOUT0-3 = TAG0-3 = 0
+PASS T1.2 reset values: STATUS=0x08 (in_ready only), CTRL/BLK/gap@0x2C read 0
+PASS T1.3 KEY/NONCE are write-only (read 0); TAG write does not alias TAG read
+PASS T1.4 writes/reads above 0x5C are harmless (read 0, no state change)
+PASS T1.5 unmapped address 0x60000000 completes (interconnect DECERR), reads 0
+PASS T2.0 KAT#1 ad=0 pt=0
+PASS T2.1 KAT#6 ad=5 pt=0
+PASS T2.2 KAT#232 ad=0 pt=7
+PASS T2.3 KAT#545 ad=16 pt=16
+PASS T2.4 KAT#641 ad=13 pt=19
+PASS T2.5 KAT#1089 ad=32 pt=32
+PERF bytes=1024 elapsed_ns=32968750 throughput_kbit_per_s=248 (clk=20MHz)
+PASS T2.6 ref_gen ad=32 pt=1024
+PERF cpu_cycles_per_1KB_msg(ad=32,pt=1024)=659322 cycles
+PASS T3.1 KAT#6 ad=5 pt=0
+PASS T3.3 KAT#545 ad=16 pt=16
+PASS T3.4 KAT#641 ad=13 pt=19
+PASS T3.6 ref_gen ad=32 pt=1024
+PASS T4.0 forged tag (bit flip) auth_ok=0 KAT#1 ad=0 pt=0
+PASS T4.3 forged tag (bit flip) auth_ok=0 KAT#545 ad=16 pt=16
+PASS T4.4 forged tag (bit flip) auth_ok=0 KAT#641 ad=13 pt=19
+PASS T5 6 back-to-back ops (enc,enc,dec-forged,dec,enc,enc) without reset
+T6 pre-reset STATUS=00000009
+T6 post-reset STATUS=00000008
+PASS T6.1 reset while busy -> STATUS back to idle (0x08)
+PASS T6.2 correct enc KATs after soft reset
+PASS T6.3 correct dec (auth ok) after soft reset
+SUMMARY pass=24 fail=0
+ALL TESTS PASSED
+DONE
+SOC_EXIT code=123456789 (PASS) t=100721325000
+rtl/sim_ctrl.v:27: $finish called at 100721325000 (1ps)
+BUS_MONITOR slot non-OKAY responses=0 total_cycles=2014427

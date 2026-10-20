@@ -1,0 +1,11 @@
+WARNING: tb_axi.v:70: $readmemh(vec_a32_p1024_ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_axi.v:70: $readmemh(vec_a32_p1024_pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_axi.v:70: $readmemh(vec_a32_p1024_exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT DATA_START cyc=146
+EVT LAST_FULL_START cyc=3611
+EVT DATA_END cyc=3696
+STATUS=0000001e auth_ok=1
+THROUGHPUT level=axi adlen=32 ptlen=1024 sim_time_ns=184750.0 pt_bits=8192 mbps=44.34 cycles=3695
+THROUGHPUT_SS level=axi adlen=32 ptlen=1024 N=32 from_blk=8 to_blk=40 window_ns=88000.0 pt_bits=4096 mbps=46.55
+RESULT mode=ENC            adlen=32 ptlen=1024 total_cycles=3745 errors=0 plain_bytes_matching_PT_released=0
+tb_axi.v:107: $finish called at 187550000 (1ps)

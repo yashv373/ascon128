@@ -1,0 +1,17 @@
+NO final/metrics.json; last steps: ['resolved.json', 'tmp', 'warning.log']
+[DRT-0073] No access point for clkbuf_6_59_0_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_6_61_0_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_6_41_0_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_2_0_0_sclk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_6_63_0_clk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_0_sclk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for clkbuf_2_1_0_sclk/I (gf180mcu_fd_sc_mcu7t5v0__clkbuf_4).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_14_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_26_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_33_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_3_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_59_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_48_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_2_2_0_clk_Z/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_0_sclk_Z/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+

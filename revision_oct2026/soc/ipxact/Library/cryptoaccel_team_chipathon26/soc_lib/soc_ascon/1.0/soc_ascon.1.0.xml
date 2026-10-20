@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+	<ipxact:vendor>cryptoaccel_team_chipathon26</ipxact:vendor>
+	<ipxact:library>soc_lib</ipxact:library>
+	<ipxact:name>soc_ascon</ipxact:name>
+	<ipxact:version>1.0</ipxact:version>
+	<ipxact:componentInstances>
+		<ipxact:componentInstance><ipxact:instanceName>u_cpu</ipxact:instanceName><ipxact:componentRef vendor="cryptoaccel_team_chipathon26" library="soc_lib" name="picorv32_axi" version="1.0"/></ipxact:componentInstance>
+		<ipxact:componentInstance><ipxact:instanceName>u_ic</ipxact:instanceName><ipxact:componentRef vendor="cryptoaccel_team_chipathon26" library="soc_lib" name="axil_interconnect" version="1.0"/></ipxact:componentInstance>
+		<ipxact:componentInstance><ipxact:instanceName>u_ram</ipxact:instanceName><ipxact:componentRef vendor="cryptoaccel_team_chipathon26" library="soc_lib" name="axil_ram" version="1.0"/></ipxact:componentInstance>
+		<ipxact:componentInstance><ipxact:instanceName>u_ctrl</ipxact:instanceName><ipxact:componentRef vendor="cryptoaccel_team_chipathon26" library="soc_lib" name="sim_ctrl" version="1.0"/></ipxact:componentInstance>
+		<ipxact:componentInstance><ipxact:instanceName>u_acc</ipxact:instanceName><ipxact:componentRef vendor="cryptoaccel_team_chipathon26" library="soc_lib" name="axi_ascon" version="1.0"/></ipxact:componentInstance>
+	</ipxact:componentInstances>
+	<ipxact:interconnections>
+		<ipxact:interconnection><ipxact:name>cpu_to_ic</ipxact:name><ipxact:activeInterface componentRef="u_cpu" busRef="mem_axi"/><ipxact:activeInterface componentRef="u_ic" busRef="s_axil"/></ipxact:interconnection>
+		<ipxact:interconnection><ipxact:name>ic_to_ram</ipxact:name><ipxact:activeInterface componentRef="u_ic" busRef="m_ram"/><ipxact:activeInterface componentRef="u_ram" busRef="s_axil"/></ipxact:interconnection>
+		<ipxact:interconnection><ipxact:name>ic_to_acc</ipxact:name><ipxact:activeInterface componentRef="u_ic" busRef="m_acc"/><ipxact:activeInterface componentRef="u_acc" busRef="S_AXI"/></ipxact:interconnection>
+		<ipxact:interconnection><ipxact:name>ic_to_ctrl</ipxact:name><ipxact:activeInterface componentRef="u_ic" busRef="m_ctrl"/><ipxact:activeInterface componentRef="u_ctrl" busRef="s_axil"/></ipxact:interconnection>
+	</ipxact:interconnections>
+	<ipxact:description>CPU(0x0 RAM, 0x4000_0000 accelerator slot, 0x5000_0000 sim console). Only u_acc differs between soc_ascon and soc_stub.</ipxact:description>
+</ipxact:design>

@@ -1,0 +1,18 @@
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o spi_rtl.vvp tb_spi.v /rtl/*.v && time vvp spi_rtl.vvp +ADLEN=16 +PTLEN=64'
+WARNING: tb_spi.v:50: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_spi.v:50: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_spi.v:50: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+WINDOW_START 18000000
+WINDOW_END 3281250000
+THROUGHPUT level=spi adlen=16 ptlen=64 sim_time_ns=2738750.0 pt_bits=512 mbps=0.19 cycles=62988
+THROUGHPUT_SS level=spi adlen=16 ptlen=64 N=4 from_blk=0 to_blk=4 window_ns=1732500.0 pt_bits=512 mbps=0.30
+RESULT adlen=16 ptlen=64 frames=62 window_us=3263 errors=0 PASS
+tb_spi.v:85: $finish called at 3281250000 (1ps)
+
+real	0m0.631s
+user	0m0.601s
+sys	0m0.012s

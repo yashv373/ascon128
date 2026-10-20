@@ -1,0 +1,7 @@
+read_verilog -sv /rtl/reset_sync.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v /rtl/ascon_core_adpt_encdec.v /rtl/axi_ascon.v /rtl/axi_master.v /rtl/spi_slave.v
+hierarchy -check -top spi_slave
+synth -top spi_slave
+dfflibmap -liberty /tmp/lib.lib
+abc -liberty /tmp/lib.lib
+opt_clean
+tee -o /sim/yosys_stat_hier.rpt stat -liberty /tmp/lib.lib -top spi_slave

@@ -1,0 +1,22 @@
+EVT DATA_START cyc=146
+EVT LAST_FULL_START cyc=1851
+EVT DATA_END cyc=1936
+RESULT mode=ENC            adlen=32 ptlen=512 total_cycles=1985 errors=0 plain_bytes_matching_PT_released=0
+EVT DATA_START cyc=146
+EVT LAST_FULL_START cyc=3611
+EVT DATA_END cyc=3696
+RESULT mode=ENC            adlen=32 ptlen=1024 total_cycles=3745 errors=0 plain_bytes_matching_PT_released=0
+EVT DATA_START cyc=141
+EVT LAST_FULL_START cyc=1696
+EVT DATA_END cyc=1776
+RESULT mode=ENC       +MIN adlen=32 ptlen=512 total_cycles=1825 errors=0 plain_bytes_matching_PT_released=0
+EVT DATA_START cyc=141
+EVT LAST_FULL_START cyc=3296
+EVT DATA_END cyc=3376
+RESULT mode=ENC       +MIN adlen=32 ptlen=1024 total_cycles=3425 errors=0 plain_bytes_matching_PT_released=0
+STATUS=0000001e auth_ok=1
+RESULT mode=ENC            adlen=64 ptlen=1024 total_cycles=3805 errors=0 plain_bytes_matching_PT_released=0
+STATUS=0000001e auth_ok=1
+RESULT mode=DEC            adlen=64 ptlen=1024 total_cycles=3825 errors=0 plain_bytes_matching_PT_released=1024
+STATUS=0000001a auth_ok=0
+RESULT mode=DEC+FORGED     adlen=64 ptlen=1024 total_cycles=3825 errors=0 plain_bytes_matching_PT_released=1024

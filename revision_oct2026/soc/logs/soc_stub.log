@@ -1,0 +1,10 @@
+Addressing configuration for axil_interconnect instance tb_soc.dut.u_core.u_ic
+ 0 ( 0): 00000000 / 17 -- 00000000-0001ffff
+ 1 ( 0): 40000000 / 07 -- 40000000-4000007f
+ 2 ( 0): 50000000 / 06 -- 50000000-5000003f
+ASCON SoC firmware start
+FAIL T0 ASCON probe: STATUS=00000000 expected 0x00000008 -> accelerator missing/unresponsive, skipping IP tests
+SUMMARY pass=0 fail=1
+SOC_EXIT code=1 (FAIL) t=1208925000
+rtl/sim_ctrl.v:27: $finish called at 1208925000 (1ps)
+BUS_MONITOR slot non-OKAY responses=1 total_cycles=24179
