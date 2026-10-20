@@ -1,0 +1,3 @@
+THROUGHPUT level=axi adlen=32 ptlen=1024 sim_time_ns=160658.6 pt_bits=8192 mbps=50.99 cycles=3695
+THROUGHPUT_SS level=axi adlen=32 ptlen=1024 N=32 from_blk=8 to_blk=40 window_ns=76524.8 pt_bits=4096 mbps=53.53
+RESULT mode=ENC            adlen=32 ptlen=1024 total_cycles=3745 errors=0 plain_bytes_matching_PT_released=0

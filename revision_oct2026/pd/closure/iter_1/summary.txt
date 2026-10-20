@@ -1,0 +1,17 @@
+NO final/metrics.json; last steps: ['resolved.json', 'tmp', 'warning.log']
+Running 'OpenROAD.STAMidPNR-3' at 'runs/r1/42-openroad-stamidpnr-3'…
+Logging subprocess to [repr.filename]'runs/r1/42-openroad-stamidpnr-3/openroad-stamidpnr-3.log'[/repr.filename]…
+Running 'OpenROAD.DetailedRouting' at 'runs/r1/43-openroad-detailedrouting'…
+Running TritonRoute with 16 threads…
+Logging subprocess to [repr.filename]'runs/r1/43-openroad-detailedrouting/openroad-detailedrouting.log'[/repr.filename]…
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via1
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via2
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via3
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
+[DRT-0349] LEF58_ENCLOSURE with no CUTCLASS is not supported. Skipping for layer Via4
+[DRT-0073] No access point for ANTENNA_clkbuf_6_0_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+[DRT-0073] No access point for ANTENNA_clkbuf_6_56_0_clk_I/I (gf180mcu_fd_sc_mcu7t5v0__antenna).
+

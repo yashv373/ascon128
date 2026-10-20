@@ -1,0 +1,785 @@
+NIST_KAT Count=1 match=True
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_0_0.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_0_0.vvp +ADLEN=0 +PTLEN=0'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT DIN_CONSUME cyc=35
+EVT DOUT_VALID cyc=37 bytes=0
+EVT DONE cyc=63
+RESULT adlen=0 ptlen=0 start_to_done_cycles=56 errors=0 PASS
+tb_core.v:66: $finish called at 3968750 (1ps)
+NIST_KAT Count=545 match=True
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_16_16.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_16_16.vvp +ADLEN=16 +PTLEN=16'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT AD_CONSUME cyc=33
+EVT AD_CONSUME cyc=50
+EVT DIN_CONSUME cyc=68
+EVT DOUT_VALID cyc=70 bytes=16
+EVT DIN_CONSUME cyc=86
+EVT DOUT_VALID cyc=88 bytes=0
+EVT DONE cyc=114
+RESULT adlen=16 ptlen=16 start_to_done_cycles=107 errors=0 PASS
+tb_core.v:66: $finish called at 7156250 (1ps)
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_16_64.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_16_64.vvp +ADLEN=16 +PTLEN=64'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT AD_CONSUME cyc=33
+EVT AD_CONSUME cyc=50
+EVT DIN_CONSUME cyc=68
+EVT DOUT_VALID cyc=70 bytes=16
+EVT DIN_CONSUME cyc=86
+EVT DOUT_VALID cyc=88 bytes=16
+EVT DIN_CONSUME cyc=104
+EVT DOUT_VALID cyc=106 bytes=16
+EVT DIN_CONSUME cyc=122
+EVT DOUT_VALID cyc=124 bytes=16
+EVT DIN_CONSUME cyc=140
+EVT DOUT_VALID cyc=142 bytes=0
+EVT DONE cyc=168
+RESULT adlen=16 ptlen=64 start_to_done_cycles=161 errors=0 PASS
+tb_core.v:66: $finish called at 10531250 (1ps)
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_32_256.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_32_256.vvp +ADLEN=32 +PTLEN=256'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT AD_CONSUME cyc=33
+EVT AD_CONSUME cyc=50
+EVT AD_CONSUME cyc=67
+EVT DIN_CONSUME cyc=85
+EVT DOUT_VALID cyc=87 bytes=16
+EVT DIN_CONSUME cyc=103
+EVT DOUT_VALID cyc=105 bytes=16
+EVT DIN_CONSUME cyc=121
+EVT DOUT_VALID cyc=123 bytes=16
+EVT DIN_CONSUME cyc=139
+EVT DOUT_VALID cyc=141 bytes=16
+EVT DIN_CONSUME cyc=157
+EVT DOUT_VALID cyc=159 bytes=16
+EVT DIN_CONSUME cyc=175
+EVT DOUT_VALID cyc=177 bytes=16
+EVT DIN_CONSUME cyc=193
+EVT DOUT_VALID cyc=195 bytes=16
+EVT DIN_CONSUME cyc=211
+EVT DOUT_VALID cyc=213 bytes=16
+EVT DIN_CONSUME cyc=229
+EVT DOUT_VALID cyc=231 bytes=16
+EVT DIN_CONSUME cyc=247
+EVT DOUT_VALID cyc=249 bytes=16
+EVT DIN_CONSUME cyc=265
+EVT DOUT_VALID cyc=267 bytes=16
+EVT DIN_CONSUME cyc=283
+EVT DOUT_VALID cyc=285 bytes=16
+EVT DIN_CONSUME cyc=301
+EVT DOUT_VALID cyc=303 bytes=16
+EVT DIN_CONSUME cyc=319
+EVT DOUT_VALID cyc=321 bytes=16
+EVT DIN_CONSUME cyc=337
+EVT DOUT_VALID cyc=339 bytes=16
+EVT DIN_CONSUME cyc=355
+EVT DOUT_VALID cyc=357 bytes=16
+EVT DIN_CONSUME cyc=373
+EVT DOUT_VALID cyc=375 bytes=0
+EVT DONE cyc=401
+RESULT adlen=32 ptlen=256 start_to_done_cycles=394 errors=0 PASS
+tb_core.v:66: $finish called at 25093750 (1ps)
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_0_1024.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_0_1024.vvp +ADLEN=0 +PTLEN=1024'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT DIN_CONSUME cyc=35
+EVT DOUT_VALID cyc=37 bytes=16
+EVT DIN_CONSUME cyc=53
+EVT DOUT_VALID cyc=55 bytes=16
+EVT DIN_CONSUME cyc=71
+EVT DOUT_VALID cyc=73 bytes=16
+EVT DIN_CONSUME cyc=89
+EVT DOUT_VALID cyc=91 bytes=16
+EVT DIN_CONSUME cyc=107
+EVT DOUT_VALID cyc=109 bytes=16
+EVT DIN_CONSUME cyc=125
+EVT DOUT_VALID cyc=127 bytes=16
+EVT DIN_CONSUME cyc=143
+EVT DOUT_VALID cyc=145 bytes=16
+EVT DIN_CONSUME cyc=161
+EVT DOUT_VALID cyc=163 bytes=16
+EVT DIN_CONSUME cyc=179
+EVT DOUT_VALID cyc=181 bytes=16
+EVT DIN_CONSUME cyc=197
+EVT DOUT_VALID cyc=199 bytes=16
+EVT DIN_CONSUME cyc=215
+EVT DOUT_VALID cyc=217 bytes=16
+EVT DIN_CONSUME cyc=233
+EVT DOUT_VALID cyc=235 bytes=16
+EVT DIN_CONSUME cyc=251
+EVT DOUT_VALID cyc=253 bytes=16
+EVT DIN_CONSUME cyc=269
+EVT DOUT_VALID cyc=271 bytes=16
+EVT DIN_CONSUME cyc=287
+EVT DOUT_VALID cyc=289 bytes=16
+EVT DIN_CONSUME cyc=305
+EVT DOUT_VALID cyc=307 bytes=16
+EVT DIN_CONSUME cyc=323
+EVT DOUT_VALID cyc=325 bytes=16
+EVT DIN_CONSUME cyc=341
+EVT DOUT_VALID cyc=343 bytes=16
+EVT DIN_CONSUME cyc=359
+EVT DOUT_VALID cyc=361 bytes=16
+EVT DIN_CONSUME cyc=377
+EVT DOUT_VALID cyc=379 bytes=16
+EVT DIN_CONSUME cyc=395
+EVT DOUT_VALID cyc=397 bytes=16
+EVT DIN_CONSUME cyc=413
+EVT DOUT_VALID cyc=415 bytes=16
+EVT DIN_CONSUME cyc=431
+EVT DOUT_VALID cyc=433 bytes=16
+EVT DIN_CONSUME cyc=449
+EVT DOUT_VALID cyc=451 bytes=16
+EVT DIN_CONSUME cyc=467
+EVT DOUT_VALID cyc=469 bytes=16
+EVT DIN_CONSUME cyc=485
+EVT DOUT_VALID cyc=487 bytes=16
+EVT DIN_CONSUME cyc=503
+EVT DOUT_VALID cyc=505 bytes=16
+EVT DIN_CONSUME cyc=521
+EVT DOUT_VALID cyc=523 bytes=16
+EVT DIN_CONSUME cyc=539
+EVT DOUT_VALID cyc=541 bytes=16
+EVT DIN_CONSUME cyc=557
+EVT DOUT_VALID cyc=559 bytes=16
+EVT DIN_CONSUME cyc=575
+EVT DOUT_VALID cyc=577 bytes=16
+EVT DIN_CONSUME cyc=593
+EVT DOUT_VALID cyc=595 bytes=16
+EVT DIN_CONSUME cyc=611
+EVT DOUT_VALID cyc=613 bytes=16
+EVT DIN_CONSUME cyc=629
+EVT DOUT_VALID cyc=631 bytes=16
+EVT DIN_CONSUME cyc=647
+EVT DOUT_VALID cyc=649 bytes=16
+EVT DIN_CONSUME cyc=665
+EVT DOUT_VALID cyc=667 bytes=16
+EVT DIN_CONSUME cyc=683
+EVT DOUT_VALID cyc=685 bytes=16
+EVT DIN_CONSUME cyc=701
+EVT DOUT_VALID cyc=703 bytes=16
+EVT DIN_CONSUME cyc=719
+EVT DOUT_VALID cyc=721 bytes=16
+EVT DIN_CONSUME cyc=737
+EVT DOUT_VALID cyc=739 bytes=16
+EVT DIN_CONSUME cyc=755
+EVT DOUT_VALID cyc=757 bytes=16
+EVT DIN_CONSUME cyc=773
+EVT DOUT_VALID cyc=775 bytes=16
+EVT DIN_CONSUME cyc=791
+EVT DOUT_VALID cyc=793 bytes=16
+EVT DIN_CONSUME cyc=809
+EVT DOUT_VALID cyc=811 bytes=16
+EVT DIN_CONSUME cyc=827
+EVT DOUT_VALID cyc=829 bytes=16
+EVT DIN_CONSUME cyc=845
+EVT DOUT_VALID cyc=847 bytes=16
+EVT DIN_CONSUME cyc=863
+EVT DOUT_VALID cyc=865 bytes=16
+EVT DIN_CONSUME cyc=881
+EVT DOUT_VALID cyc=883 bytes=16
+EVT DIN_CONSUME cyc=899
+EVT DOUT_VALID cyc=901 bytes=16
+EVT DIN_CONSUME cyc=917
+EVT DOUT_VALID cyc=919 bytes=16
+EVT DIN_CONSUME cyc=935
+EVT DOUT_VALID cyc=937 bytes=16
+EVT DIN_CONSUME cyc=953
+EVT DOUT_VALID cyc=955 bytes=16
+EVT DIN_CONSUME cyc=971
+EVT DOUT_VALID cyc=973 bytes=16
+EVT DIN_CONSUME cyc=989
+EVT DOUT_VALID cyc=991 bytes=16
+EVT DIN_CONSUME cyc=1007
+EVT DOUT_VALID cyc=1009 bytes=16
+EVT DIN_CONSUME cyc=1025
+EVT DOUT_VALID cyc=1027 bytes=16
+EVT DIN_CONSUME cyc=1043
+EVT DOUT_VALID cyc=1045 bytes=16
+EVT DIN_CONSUME cyc=1061
+EVT DOUT_VALID cyc=1063 bytes=16
+EVT DIN_CONSUME cyc=1079
+EVT DOUT_VALID cyc=1081 bytes=16
+EVT DIN_CONSUME cyc=1097
+EVT DOUT_VALID cyc=1099 bytes=16
+EVT DIN_CONSUME cyc=1115
+EVT DOUT_VALID cyc=1117 bytes=16
+EVT DIN_CONSUME cyc=1133
+EVT DOUT_VALID cyc=1135 bytes=16
+EVT DIN_CONSUME cyc=1151
+EVT DOUT_VALID cyc=1153 bytes=16
+EVT DIN_CONSUME cyc=1169
+EVT DOUT_VALID cyc=1171 bytes=16
+EVT DIN_CONSUME cyc=1187
+EVT DOUT_VALID cyc=1189 bytes=0
+EVT DONE cyc=1215
+RESULT adlen=0 ptlen=1024 start_to_done_cycles=1208 errors=0 PASS
+tb_core.v:66: $finish called at 75968750 (1ps)
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_0_4000.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_0_4000.vvp +ADLEN=0 +PTLEN=4000'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT DIN_CONSUME cyc=35
+EVT DOUT_VALID cyc=37 bytes=16
+EVT DIN_CONSUME cyc=53
+EVT DOUT_VALID cyc=55 bytes=16
+EVT DIN_CONSUME cyc=71
+EVT DOUT_VALID cyc=73 bytes=16
+EVT DIN_CONSUME cyc=89
+EVT DOUT_VALID cyc=91 bytes=16
+EVT DIN_CONSUME cyc=107
+EVT DOUT_VALID cyc=109 bytes=16
+EVT DIN_CONSUME cyc=125
+EVT DOUT_VALID cyc=127 bytes=16
+EVT DIN_CONSUME cyc=143
+EVT DOUT_VALID cyc=145 bytes=16
+EVT DIN_CONSUME cyc=161
+EVT DOUT_VALID cyc=163 bytes=16
+EVT DIN_CONSUME cyc=179
+EVT DOUT_VALID cyc=181 bytes=16
+EVT DIN_CONSUME cyc=197
+EVT DOUT_VALID cyc=199 bytes=16
+EVT DIN_CONSUME cyc=215
+EVT DOUT_VALID cyc=217 bytes=16
+EVT DIN_CONSUME cyc=233
+EVT DOUT_VALID cyc=235 bytes=16
+EVT DIN_CONSUME cyc=251
+EVT DOUT_VALID cyc=253 bytes=16
+EVT DIN_CONSUME cyc=269
+EVT DOUT_VALID cyc=271 bytes=16
+EVT DIN_CONSUME cyc=287
+EVT DOUT_VALID cyc=289 bytes=16
+EVT DIN_CONSUME cyc=305
+EVT DOUT_VALID cyc=307 bytes=16
+EVT DIN_CONSUME cyc=323
+EVT DOUT_VALID cyc=325 bytes=16
+EVT DIN_CONSUME cyc=341
+EVT DOUT_VALID cyc=343 bytes=16
+EVT DIN_CONSUME cyc=359
+EVT DOUT_VALID cyc=361 bytes=16
+EVT DIN_CONSUME cyc=377
+EVT DOUT_VALID cyc=379 bytes=16
+EVT DIN_CONSUME cyc=395
+EVT DOUT_VALID cyc=397 bytes=16
+EVT DIN_CONSUME cyc=413
+EVT DOUT_VALID cyc=415 bytes=16
+EVT DIN_CONSUME cyc=431
+EVT DOUT_VALID cyc=433 bytes=16
+EVT DIN_CONSUME cyc=449
+EVT DOUT_VALID cyc=451 bytes=16
+EVT DIN_CONSUME cyc=467
+EVT DOUT_VALID cyc=469 bytes=16
+EVT DIN_CONSUME cyc=485
+EVT DOUT_VALID cyc=487 bytes=16
+EVT DIN_CONSUME cyc=503
+EVT DOUT_VALID cyc=505 bytes=16
+EVT DIN_CONSUME cyc=521
+EVT DOUT_VALID cyc=523 bytes=16
+EVT DIN_CONSUME cyc=539
+EVT DOUT_VALID cyc=541 bytes=16
+EVT DIN_CONSUME cyc=557
+EVT DOUT_VALID cyc=559 bytes=16
+EVT DIN_CONSUME cyc=575
+EVT DOUT_VALID cyc=577 bytes=16
+EVT DIN_CONSUME cyc=593
+EVT DOUT_VALID cyc=595 bytes=16
+EVT DIN_CONSUME cyc=611
+EVT DOUT_VALID cyc=613 bytes=16
+EVT DIN_CONSUME cyc=629
+EVT DOUT_VALID cyc=631 bytes=16
+EVT DIN_CONSUME cyc=647
+EVT DOUT_VALID cyc=649 bytes=16
+EVT DIN_CONSUME cyc=665
+EVT DOUT_VALID cyc=667 bytes=16
+EVT DIN_CONSUME cyc=683
+EVT DOUT_VALID cyc=685 bytes=16
+EVT DIN_CONSUME cyc=701
+EVT DOUT_VALID cyc=703 bytes=16
+EVT DIN_CONSUME cyc=719
+EVT DOUT_VALID cyc=721 bytes=16
+EVT DIN_CONSUME cyc=737
+EVT DOUT_VALID cyc=739 bytes=16
+EVT DIN_CONSUME cyc=755
+EVT DOUT_VALID cyc=757 bytes=16
+EVT DIN_CONSUME cyc=773
+EVT DOUT_VALID cyc=775 bytes=16
+EVT DIN_CONSUME cyc=791
+EVT DOUT_VALID cyc=793 bytes=16
+EVT DIN_CONSUME cyc=809
+EVT DOUT_VALID cyc=811 bytes=16
+EVT DIN_CONSUME cyc=827
+EVT DOUT_VALID cyc=829 bytes=16
+EVT DIN_CONSUME cyc=845
+EVT DOUT_VALID cyc=847 bytes=16
+EVT DIN_CONSUME cyc=863
+EVT DOUT_VALID cyc=865 bytes=16
+EVT DIN_CONSUME cyc=881
+EVT DOUT_VALID cyc=883 bytes=16
+EVT DIN_CONSUME cyc=899
+EVT DOUT_VALID cyc=901 bytes=16
+EVT DIN_CONSUME cyc=917
+EVT DOUT_VALID cyc=919 bytes=16
+EVT DIN_CONSUME cyc=935
+EVT DOUT_VALID cyc=937 bytes=16
+EVT DIN_CONSUME cyc=953
+EVT DOUT_VALID cyc=955 bytes=16
+EVT DIN_CONSUME cyc=971
+EVT DOUT_VALID cyc=973 bytes=16
+EVT DIN_CONSUME cyc=989
+EVT DOUT_VALID cyc=991 bytes=16
+EVT DIN_CONSUME cyc=1007
+EVT DOUT_VALID cyc=1009 bytes=16
+EVT DIN_CONSUME cyc=1025
+EVT DOUT_VALID cyc=1027 bytes=16
+EVT DIN_CONSUME cyc=1043
+EVT DOUT_VALID cyc=1045 bytes=16
+EVT DIN_CONSUME cyc=1061
+EVT DOUT_VALID cyc=1063 bytes=16
+EVT DIN_CONSUME cyc=1079
+EVT DOUT_VALID cyc=1081 bytes=16
+EVT DIN_CONSUME cyc=1097
+EVT DOUT_VALID cyc=1099 bytes=16
+EVT DIN_CONSUME cyc=1115
+EVT DOUT_VALID cyc=1117 bytes=16
+EVT DIN_CONSUME cyc=1133
+EVT DOUT_VALID cyc=1135 bytes=16
+EVT DIN_CONSUME cyc=1151
+EVT DOUT_VALID cyc=1153 bytes=16
+EVT DIN_CONSUME cyc=1169
+EVT DOUT_VALID cyc=1171 bytes=16
+EVT DIN_CONSUME cyc=1187
+EVT DOUT_VALID cyc=1189 bytes=16
+EVT DIN_CONSUME cyc=1205
+EVT DOUT_VALID cyc=1207 bytes=16
+EVT DIN_CONSUME cyc=1223
+EVT DOUT_VALID cyc=1225 bytes=16
+EVT DIN_CONSUME cyc=1241
+EVT DOUT_VALID cyc=1243 bytes=16
+EVT DIN_CONSUME cyc=1259
+EVT DOUT_VALID cyc=1261 bytes=16
+EVT DIN_CONSUME cyc=1277
+EVT DOUT_VALID cyc=1279 bytes=16
+EVT DIN_CONSUME cyc=1295
+EVT DOUT_VALID cyc=1297 bytes=16
+EVT DIN_CONSUME cyc=1313
+EVT DOUT_VALID cyc=1315 bytes=16
+EVT DIN_CONSUME cyc=1331
+EVT DOUT_VALID cyc=1333 bytes=16
+EVT DIN_CONSUME cyc=1349
+EVT DOUT_VALID cyc=1351 bytes=16
+EVT DIN_CONSUME cyc=1367
+EVT DOUT_VALID cyc=1369 bytes=16
+EVT DIN_CONSUME cyc=1385
+EVT DOUT_VALID cyc=1387 bytes=16
+EVT DIN_CONSUME cyc=1403
+EVT DOUT_VALID cyc=1405 bytes=16
+EVT DIN_CONSUME cyc=1421
+EVT DOUT_VALID cyc=1423 bytes=16
+EVT DIN_CONSUME cyc=1439
+EVT DOUT_VALID cyc=1441 bytes=16
+EVT DIN_CONSUME cyc=1457
+EVT DOUT_VALID cyc=1459 bytes=16
+EVT DIN_CONSUME cyc=1475
+EVT DOUT_VALID cyc=1477 bytes=16
+EVT DIN_CONSUME cyc=1493
+EVT DOUT_VALID cyc=1495 bytes=16
+EVT DIN_CONSUME cyc=1511
+EVT DOUT_VALID cyc=1513 bytes=16
+EVT DIN_CONSUME cyc=1529
+EVT DOUT_VALID cyc=1531 bytes=16
+EVT DIN_CONSUME cyc=1547
+EVT DOUT_VALID cyc=1549 bytes=16
+EVT DIN_CONSUME cyc=1565
+EVT DOUT_VALID cyc=1567 bytes=16
+EVT DIN_CONSUME cyc=1583
+EVT DOUT_VALID cyc=1585 bytes=16
+EVT DIN_CONSUME cyc=1601
+EVT DOUT_VALID cyc=1603 bytes=16
+EVT DIN_CONSUME cyc=1619
+EVT DOUT_VALID cyc=1621 bytes=16
+EVT DIN_CONSUME cyc=1637
+EVT DOUT_VALID cyc=1639 bytes=16
+EVT DIN_CONSUME cyc=1655
+EVT DOUT_VALID cyc=1657 bytes=16
+EVT DIN_CONSUME cyc=1673
+EVT DOUT_VALID cyc=1675 bytes=16
+EVT DIN_CONSUME cyc=1691
+EVT DOUT_VALID cyc=1693 bytes=16
+EVT DIN_CONSUME cyc=1709
+EVT DOUT_VALID cyc=1711 bytes=16
+EVT DIN_CONSUME cyc=1727
+EVT DOUT_VALID cyc=1729 bytes=16
+EVT DIN_CONSUME cyc=1745
+EVT DOUT_VALID cyc=1747 bytes=16
+EVT DIN_CONSUME cyc=1763
+EVT DOUT_VALID cyc=1765 bytes=16
+EVT DIN_CONSUME cyc=1781
+EVT DOUT_VALID cyc=1783 bytes=16
+EVT DIN_CONSUME cyc=1799
+EVT DOUT_VALID cyc=1801 bytes=16
+EVT DIN_CONSUME cyc=1817
+EVT DOUT_VALID cyc=1819 bytes=16
+EVT DIN_CONSUME cyc=1835
+EVT DOUT_VALID cyc=1837 bytes=16
+EVT DIN_CONSUME cyc=1853
+EVT DOUT_VALID cyc=1855 bytes=16
+EVT DIN_CONSUME cyc=1871
+EVT DOUT_VALID cyc=1873 bytes=16
+EVT DIN_CONSUME cyc=1889
+EVT DOUT_VALID cyc=1891 bytes=16
+EVT DIN_CONSUME cyc=1907
+EVT DOUT_VALID cyc=1909 bytes=16
+EVT DIN_CONSUME cyc=1925
+EVT DOUT_VALID cyc=1927 bytes=16
+EVT DIN_CONSUME cyc=1943
+EVT DOUT_VALID cyc=1945 bytes=16
+EVT DIN_CONSUME cyc=1961
+EVT DOUT_VALID cyc=1963 bytes=16
+EVT DIN_CONSUME cyc=1979
+EVT DOUT_VALID cyc=1981 bytes=16
+EVT DIN_CONSUME cyc=1997
+EVT DOUT_VALID cyc=1999 bytes=16
+EVT DIN_CONSUME cyc=2015
+EVT DOUT_VALID cyc=2017 bytes=16
+EVT DIN_CONSUME cyc=2033
+EVT DOUT_VALID cyc=2035 bytes=16
+EVT DIN_CONSUME cyc=2051
+EVT DOUT_VALID cyc=2053 bytes=16
+EVT DIN_CONSUME cyc=2069
+EVT DOUT_VALID cyc=2071 bytes=16
+EVT DIN_CONSUME cyc=2087
+EVT DOUT_VALID cyc=2089 bytes=16
+EVT DIN_CONSUME cyc=2105
+EVT DOUT_VALID cyc=2107 bytes=16
+EVT DIN_CONSUME cyc=2123
+EVT DOUT_VALID cyc=2125 bytes=16
+EVT DIN_CONSUME cyc=2141
+EVT DOUT_VALID cyc=2143 bytes=16
+EVT DIN_CONSUME cyc=2159
+EVT DOUT_VALID cyc=2161 bytes=16
+EVT DIN_CONSUME cyc=2177
+EVT DOUT_VALID cyc=2179 bytes=16
+EVT DIN_CONSUME cyc=2195
+EVT DOUT_VALID cyc=2197 bytes=16
+EVT DIN_CONSUME cyc=2213
+EVT DOUT_VALID cyc=2215 bytes=16
+EVT DIN_CONSUME cyc=2231
+EVT DOUT_VALID cyc=2233 bytes=16
+EVT DIN_CONSUME cyc=2249
+EVT DOUT_VALID cyc=2251 bytes=16
+EVT DIN_CONSUME cyc=2267
+EVT DOUT_VALID cyc=2269 bytes=16
+EVT DIN_CONSUME cyc=2285
+EVT DOUT_VALID cyc=2287 bytes=16
+EVT DIN_CONSUME cyc=2303
+EVT DOUT_VALID cyc=2305 bytes=16
+EVT DIN_CONSUME cyc=2321
+EVT DOUT_VALID cyc=2323 bytes=16
+EVT DIN_CONSUME cyc=2339
+EVT DOUT_VALID cyc=2341 bytes=16
+EVT DIN_CONSUME cyc=2357
+EVT DOUT_VALID cyc=2359 bytes=16
+EVT DIN_CONSUME cyc=2375
+EVT DOUT_VALID cyc=2377 bytes=16
+EVT DIN_CONSUME cyc=2393
+EVT DOUT_VALID cyc=2395 bytes=16
+EVT DIN_CONSUME cyc=2411
+EVT DOUT_VALID cyc=2413 bytes=16
+EVT DIN_CONSUME cyc=2429
+EVT DOUT_VALID cyc=2431 bytes=16
+EVT DIN_CONSUME cyc=2447
+EVT DOUT_VALID cyc=2449 bytes=16
+EVT DIN_CONSUME cyc=2465
+EVT DOUT_VALID cyc=2467 bytes=16
+EVT DIN_CONSUME cyc=2483
+EVT DOUT_VALID cyc=2485 bytes=16
+EVT DIN_CONSUME cyc=2501
+EVT DOUT_VALID cyc=2503 bytes=16
+EVT DIN_CONSUME cyc=2519
+EVT DOUT_VALID cyc=2521 bytes=16
+EVT DIN_CONSUME cyc=2537
+EVT DOUT_VALID cyc=2539 bytes=16
+EVT DIN_CONSUME cyc=2555
+EVT DOUT_VALID cyc=2557 bytes=16
+EVT DIN_CONSUME cyc=2573
+EVT DOUT_VALID cyc=2575 bytes=16
+EVT DIN_CONSUME cyc=2591
+EVT DOUT_VALID cyc=2593 bytes=16
+EVT DIN_CONSUME cyc=2609
+EVT DOUT_VALID cyc=2611 bytes=16
+EVT DIN_CONSUME cyc=2627
+EVT DOUT_VALID cyc=2629 bytes=16
+EVT DIN_CONSUME cyc=2645
+EVT DOUT_VALID cyc=2647 bytes=16
+EVT DIN_CONSUME cyc=2663
+EVT DOUT_VALID cyc=2665 bytes=16
+EVT DIN_CONSUME cyc=2681
+EVT DOUT_VALID cyc=2683 bytes=16
+EVT DIN_CONSUME cyc=2699
+EVT DOUT_VALID cyc=2701 bytes=16
+EVT DIN_CONSUME cyc=2717
+EVT DOUT_VALID cyc=2719 bytes=16
+EVT DIN_CONSUME cyc=2735
+EVT DOUT_VALID cyc=2737 bytes=16
+EVT DIN_CONSUME cyc=2753
+EVT DOUT_VALID cyc=2755 bytes=16
+EVT DIN_CONSUME cyc=2771
+EVT DOUT_VALID cyc=2773 bytes=16
+EVT DIN_CONSUME cyc=2789
+EVT DOUT_VALID cyc=2791 bytes=16
+EVT DIN_CONSUME cyc=2807
+EVT DOUT_VALID cyc=2809 bytes=16
+EVT DIN_CONSUME cyc=2825
+EVT DOUT_VALID cyc=2827 bytes=16
+EVT DIN_CONSUME cyc=2843
+EVT DOUT_VALID cyc=2845 bytes=16
+EVT DIN_CONSUME cyc=2861
+EVT DOUT_VALID cyc=2863 bytes=16
+EVT DIN_CONSUME cyc=2879
+EVT DOUT_VALID cyc=2881 bytes=16
+EVT DIN_CONSUME cyc=2897
+EVT DOUT_VALID cyc=2899 bytes=16
+EVT DIN_CONSUME cyc=2915
+EVT DOUT_VALID cyc=2917 bytes=16
+EVT DIN_CONSUME cyc=2933
+EVT DOUT_VALID cyc=2935 bytes=16
+EVT DIN_CONSUME cyc=2951
+EVT DOUT_VALID cyc=2953 bytes=16
+EVT DIN_CONSUME cyc=2969
+EVT DOUT_VALID cyc=2971 bytes=16
+EVT DIN_CONSUME cyc=2987
+EVT DOUT_VALID cyc=2989 bytes=16
+EVT DIN_CONSUME cyc=3005
+EVT DOUT_VALID cyc=3007 bytes=16
+EVT DIN_CONSUME cyc=3023
+EVT DOUT_VALID cyc=3025 bytes=16
+EVT DIN_CONSUME cyc=3041
+EVT DOUT_VALID cyc=3043 bytes=16
+EVT DIN_CONSUME cyc=3059
+EVT DOUT_VALID cyc=3061 bytes=16
+EVT DIN_CONSUME cyc=3077
+EVT DOUT_VALID cyc=3079 bytes=16
+EVT DIN_CONSUME cyc=3095
+EVT DOUT_VALID cyc=3097 bytes=16
+EVT DIN_CONSUME cyc=3113
+EVT DOUT_VALID cyc=3115 bytes=16
+EVT DIN_CONSUME cyc=3131
+EVT DOUT_VALID cyc=3133 bytes=16
+EVT DIN_CONSUME cyc=3149
+EVT DOUT_VALID cyc=3151 bytes=16
+EVT DIN_CONSUME cyc=3167
+EVT DOUT_VALID cyc=3169 bytes=16
+EVT DIN_CONSUME cyc=3185
+EVT DOUT_VALID cyc=3187 bytes=16
+EVT DIN_CONSUME cyc=3203
+EVT DOUT_VALID cyc=3205 bytes=16
+EVT DIN_CONSUME cyc=3221
+EVT DOUT_VALID cyc=3223 bytes=16
+EVT DIN_CONSUME cyc=3239
+EVT DOUT_VALID cyc=3241 bytes=16
+EVT DIN_CONSUME cyc=3257
+EVT DOUT_VALID cyc=3259 bytes=16
+EVT DIN_CONSUME cyc=3275
+EVT DOUT_VALID cyc=3277 bytes=16
+EVT DIN_CONSUME cyc=3293
+EVT DOUT_VALID cyc=3295 bytes=16
+EVT DIN_CONSUME cyc=3311
+EVT DOUT_VALID cyc=3313 bytes=16
+EVT DIN_CONSUME cyc=3329
+EVT DOUT_VALID cyc=3331 bytes=16
+EVT DIN_CONSUME cyc=3347
+EVT DOUT_VALID cyc=3349 bytes=16
+EVT DIN_CONSUME cyc=3365
+EVT DOUT_VALID cyc=3367 bytes=16
+EVT DIN_CONSUME cyc=3383
+EVT DOUT_VALID cyc=3385 bytes=16
+EVT DIN_CONSUME cyc=3401
+EVT DOUT_VALID cyc=3403 bytes=16
+EVT DIN_CONSUME cyc=3419
+EVT DOUT_VALID cyc=3421 bytes=16
+EVT DIN_CONSUME cyc=3437
+EVT DOUT_VALID cyc=3439 bytes=16
+EVT DIN_CONSUME cyc=3455
+EVT DOUT_VALID cyc=3457 bytes=16
+EVT DIN_CONSUME cyc=3473
+EVT DOUT_VALID cyc=3475 bytes=16
+EVT DIN_CONSUME cyc=3491
+EVT DOUT_VALID cyc=3493 bytes=16
+EVT DIN_CONSUME cyc=3509
+EVT DOUT_VALID cyc=3511 bytes=16
+EVT DIN_CONSUME cyc=3527
+EVT DOUT_VALID cyc=3529 bytes=16
+EVT DIN_CONSUME cyc=3545
+EVT DOUT_VALID cyc=3547 bytes=16
+EVT DIN_CONSUME cyc=3563
+EVT DOUT_VALID cyc=3565 bytes=16
+EVT DIN_CONSUME cyc=3581
+EVT DOUT_VALID cyc=3583 bytes=16
+EVT DIN_CONSUME cyc=3599
+EVT DOUT_VALID cyc=3601 bytes=16
+EVT DIN_CONSUME cyc=3617
+EVT DOUT_VALID cyc=3619 bytes=16
+EVT DIN_CONSUME cyc=3635
+EVT DOUT_VALID cyc=3637 bytes=16
+EVT DIN_CONSUME cyc=3653
+EVT DOUT_VALID cyc=3655 bytes=16
+EVT DIN_CONSUME cyc=3671
+EVT DOUT_VALID cyc=3673 bytes=16
+EVT DIN_CONSUME cyc=3689
+EVT DOUT_VALID cyc=3691 bytes=16
+EVT DIN_CONSUME cyc=3707
+EVT DOUT_VALID cyc=3709 bytes=16
+EVT DIN_CONSUME cyc=3725
+EVT DOUT_VALID cyc=3727 bytes=16
+EVT DIN_CONSUME cyc=3743
+EVT DOUT_VALID cyc=3745 bytes=16
+EVT DIN_CONSUME cyc=3761
+EVT DOUT_VALID cyc=3763 bytes=16
+EVT DIN_CONSUME cyc=3779
+EVT DOUT_VALID cyc=3781 bytes=16
+EVT DIN_CONSUME cyc=3797
+EVT DOUT_VALID cyc=3799 bytes=16
+EVT DIN_CONSUME cyc=3815
+EVT DOUT_VALID cyc=3817 bytes=16
+EVT DIN_CONSUME cyc=3833
+EVT DOUT_VALID cyc=3835 bytes=16
+EVT DIN_CONSUME cyc=3851
+EVT DOUT_VALID cyc=3853 bytes=16
+EVT DIN_CONSUME cyc=3869
+EVT DOUT_VALID cyc=3871 bytes=16
+EVT DIN_CONSUME cyc=3887
+EVT DOUT_VALID cyc=3889 bytes=16
+EVT DIN_CONSUME cyc=3905
+EVT DOUT_VALID cyc=3907 bytes=16
+EVT DIN_CONSUME cyc=3923
+EVT DOUT_VALID cyc=3925 bytes=16
+EVT DIN_CONSUME cyc=3941
+EVT DOUT_VALID cyc=3943 bytes=16
+EVT DIN_CONSUME cyc=3959
+EVT DOUT_VALID cyc=3961 bytes=16
+EVT DIN_CONSUME cyc=3977
+EVT DOUT_VALID cyc=3979 bytes=16
+EVT DIN_CONSUME cyc=3995
+EVT DOUT_VALID cyc=3997 bytes=16
+EVT DIN_CONSUME cyc=4013
+EVT DOUT_VALID cyc=4015 bytes=16
+EVT DIN_CONSUME cyc=4031
+EVT DOUT_VALID cyc=4033 bytes=16
+EVT DIN_CONSUME cyc=4049
+EVT DOUT_VALID cyc=4051 bytes=16
+EVT DIN_CONSUME cyc=4067
+EVT DOUT_VALID cyc=4069 bytes=16
+EVT DIN_CONSUME cyc=4085
+EVT DOUT_VALID cyc=4087 bytes=16
+EVT DIN_CONSUME cyc=4103
+EVT DOUT_VALID cyc=4105 bytes=16
+EVT DIN_CONSUME cyc=4121
+EVT DOUT_VALID cyc=4123 bytes=16
+EVT DIN_CONSUME cyc=4139
+EVT DOUT_VALID cyc=4141 bytes=16
+EVT DIN_CONSUME cyc=4157
+EVT DOUT_VALID cyc=4159 bytes=16
+EVT DIN_CONSUME cyc=4175
+EVT DOUT_VALID cyc=4177 bytes=16
+EVT DIN_CONSUME cyc=4193
+EVT DOUT_VALID cyc=4195 bytes=16
+EVT DIN_CONSUME cyc=4211
+EVT DOUT_VALID cyc=4213 bytes=16
+EVT DIN_CONSUME cyc=4229
+EVT DOUT_VALID cyc=4231 bytes=16
+EVT DIN_CONSUME cyc=4247
+EVT DOUT_VALID cyc=4249 bytes=16
+EVT DIN_CONSUME cyc=4265
+EVT DOUT_VALID cyc=4267 bytes=16
+EVT DIN_CONSUME cyc=4283
+EVT DOUT_VALID cyc=4285 bytes=16
+EVT DIN_CONSUME cyc=4301
+EVT DOUT_VALID cyc=4303 bytes=16
+EVT DIN_CONSUME cyc=4319
+EVT DOUT_VALID cyc=4321 bytes=16
+EVT DIN_CONSUME cyc=4337
+EVT DOUT_VALID cyc=4339 bytes=16
+EVT DIN_CONSUME cyc=4355
+EVT DOUT_VALID cyc=4357 bytes=16
+EVT DIN_CONSUME cyc=4373
+EVT DOUT_VALID cyc=4375 bytes=16
+EVT DIN_CONSUME cyc=4391
+EVT DOUT_VALID cyc=4393 bytes=16
+EVT DIN_CONSUME cyc=4409
+EVT DOUT_VALID cyc=4411 bytes=16
+EVT DIN_CONSUME cyc=4427
+EVT DOUT_VALID cyc=4429 bytes=16
+EVT DIN_CONSUME cyc=4445
+EVT DOUT_VALID cyc=4447 bytes=16
+EVT DIN_CONSUME cyc=4463
+EVT DOUT_VALID cyc=4465 bytes=16
+EVT DIN_CONSUME cyc=4481
+EVT DOUT_VALID cyc=4483 bytes=16
+EVT DIN_CONSUME cyc=4499
+EVT DOUT_VALID cyc=4501 bytes=16
+EVT DIN_CONSUME cyc=4517
+EVT DOUT_VALID cyc=4519 bytes=16
+EVT DIN_CONSUME cyc=4535
+EVT DOUT_VALID cyc=4537 bytes=0
+EVT DONE cyc=4563
+RESULT adlen=0 ptlen=4000 start_to_done_cycles=4556 errors=0 PASS
+tb_core.v:66: $finish called at 285218750 (1ps)
+NIST_KAT Count=1089 match=True
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && iverilog -g2012 -o core_32_32.vvp tb_core.v /rtl/ascon_core_adpt_encdec.v /rtl/ascon_round_s1.v /rtl/ascon_round_s2.v && vvp core_32_32.vvp +ADLEN=32 +PTLEN=32'
+WARNING: tb_core.v:44: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_core.v:44: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+EVT START cyc=7
+EVT AD_CONSUME cyc=33
+EVT AD_CONSUME cyc=50
+EVT AD_CONSUME cyc=67
+EVT DIN_CONSUME cyc=85
+EVT DOUT_VALID cyc=87 bytes=16
+EVT DIN_CONSUME cyc=103
+EVT DOUT_VALID cyc=105 bytes=16
+EVT DIN_CONSUME cyc=121
+EVT DOUT_VALID cyc=123 bytes=0
+EVT DONE cyc=149
+RESULT adlen=32 ptlen=32 start_to_done_cycles=142 errors=0 PASS
+tb_core.v:66: $finish called at 9343750 (1ps)

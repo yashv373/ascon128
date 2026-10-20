@@ -1,0 +1,11 @@
+WARNING: tb_spi.v:48: $readmemh(ad.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_spi.v:48: $readmemh(pt.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: tb_spi.v:48: $readmemh(exp.hex): Not enough words in the file for the requested range [0:4095].
+WINDOW_START 18000000
+WINDOW_END 5232000000
+RESULT adlen=16 ptlen=64 frames=62 window_ns=5214 errors=0 PASS
+tb_spi.v:79: $finish called at 5232000000 (1ps)
+
+real	0m0.735s
+user	0m0.718s
+sys	0m0.000s

@@ -1,0 +1,5 @@
+RESULT adlen=0 ptlen=64 frames=52 window_us=4374 errors=0 PASS
+RESULT adlen=0 ptlen=256 frames=148 window_us=12438 errors=0 PASS
+RESULT adlen=0 ptlen=512 frames=276 window_us=23190 errors=0 PASS
+RESULT adlen=16 ptlen=64 frames=62 window_us=5214 errors=0 PASS
+RESULT adlen=0 ptlen=0 frames=19 window_us=1602 errors=0 PASS

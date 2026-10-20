@@ -1,0 +1,6 @@
+THROUGHPUT level=core adlen=32 ptlen=1024 sim_time_ns=54697.8 pt_bits=8192 mbps=149.77 cycles=1258
+THROUGHPUT_SS level=core adlen=32 ptlen=1024 N=32 from_blk=8 to_blk=40 window_ns=25044.5 pt_bits=4096 mbps=163.55
+RESULT adlen=32 ptlen=1024 start_to_done_cycles=1258 errors=0 PASS
+THROUGHPUT level=core adlen=32 ptlen=4000 sim_time_ns=200268.9 pt_bits=32000 mbps=159.79 cycles=4606
+THROUGHPUT_SS level=core adlen=32 ptlen=4000 N=32 from_blk=8 to_blk=40 window_ns=25044.5 pt_bits=4096 mbps=163.55
+RESULT adlen=32 ptlen=4000 start_to_done_cycles=4606 errors=0 PASS

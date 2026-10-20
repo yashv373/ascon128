@@ -1,0 +1,12 @@
+group                               flops   comb     flop um2     comb um2 total um2      kGE
+core(ascon_core_adpt_encdec)         1165   8562      86951.9     156263.1  243215.0    22.16
+axi_ascon                            1087   2694      81169.7      62093.4  143263.1    13.05
+antenna diodes                          0  14432          0.0      63362.3   63362.3     5.77
+spi_slave(top)                        243    988      18171.9      15583.7   33755.6     3.08
+tap/endcap                              0   5875          0.0      25793.6   25793.6     2.35
+axi_master                             88    532       6568.0       9792.8   16360.8     1.49
+clock tree                              0    350          0.0      10756.5   10756.5     0.98
+unattributed(drives ports only)         0    488          0.0       8831.3    8831.3     0.80
+reset_sync                              2      2        149.3         30.7     180.0     0.02
+tie                                     0      2          0.0         17.6      17.6     0.00
+TOTAL (excl. fill)                   2585  33925                            545535.7    49.70

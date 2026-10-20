@@ -1,0 +1,1 @@
+Next: iter_6 = 24 MHz (41.67), iter_3 config + PL/GRT_RESIZER_HOLD_SLACK_MARGIN 0.2 (lever a). Launch: bash /c/Users/Asus/eda/designs/ascon_final/ascon_claude/pd_push/full.sh 6  (run_in_background; includes queue-wait, rtl hash check, watchdog, summary). If clean, next is 25 MHz same config; if hold fails, try margin 0.3.

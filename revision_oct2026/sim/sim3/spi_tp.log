@@ -1,0 +1,3 @@
+THROUGHPUT level=spi adlen=16 ptlen=64 sim_time_ns=2738750.0 pt_bits=512 mbps=0.19 cycles=62988
+THROUGHPUT_SS level=spi adlen=16 ptlen=64 N=4 from_blk=0 to_blk=4 window_ns=1732500.0 pt_bits=512 mbps=0.30
+RESULT adlen=16 ptlen=64 frames=62 window_us=3263 errors=0 PASS

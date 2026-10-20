@@ -1,0 +1,17 @@
+[INFO] USER_ID: 1000, GROUP_ID: 1000
+[INFO] Final PATH variable: /foss/tools/bin:/foss/tools/sak:/usr/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/foss/tools/kactus2:/foss/tools/klayout:/foss/tools/osic-multitool
+[INFO] Final PYTHONPATH variable: /usr/lib/python312.zip:/usr/lib/python3.12:/usr/lib/python3.12/lib-dynload:/usr/local/lib/python3.12/dist-packages:/usr/lib/python3/dist-packages:/foss/tools/ngspyce/local/lib/python3.12/dist-packages:/foss/tools/openems/local/lib/python3.12/dist-packages:/foss/tools/pyopus/local/lib/python3.12/dist-packages:/foss/tools/yosys/share/yosys/python3:/foss/tools/klayout/pymod:/foss/tools/vacask/lib/vacask/python
+[INFO] SKIPPING UI STARTUP
+[INFO] Executing command: 'bash -c cd /sim && VCD=/sim/spi_idle.vcd SCOPE=tb_spi/dut sta -no_splash -exit sta_power.tcl'
+Annotated 66337 pin activities.
+Group                   Internal   Switching     Leakage       Total
+                           Power       Power       Power       Power (Watts)
+--------------------------------------------------------------------
+Sequential           9.16819e-03 0.00000e+00 5.11579e-07 9.16870e-03  60.9%
+Combinational        0.00000e+00 0.00000e+00 7.36475e-07 7.36475e-07   0.0%
+Clock                2.14774e-03 3.73950e-03 1.66228e-06 5.88890e-03  39.1%
+Macro                0.00000e+00 0.00000e+00 0.00000e+00 0.00000e+00   0.0%
+Pad                  0.00000e+00 0.00000e+00 0.00000e+00 0.00000e+00   0.0%
+--------------------------------------------------------------------
+Total                1.13159e-02 3.73950e-03 2.90990e-06 1.50583e-02 100.0%
+                           75.1%       24.8%        0.0%

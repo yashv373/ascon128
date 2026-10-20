@@ -1,0 +1,5 @@
+# NEXT: PD run 7 (pd_7/config.yaml = run 5 with PL/GRT hold margin 0.5 -> 0.2; SDC uncertainty unchanged 0.5)
+Launch (one background script; queue behind other LibreLane jobs, then watchdog+summary):
+  cd /c/Users/Asus/eda/designs/ascon_final/ascon_claude/cg && bash run5.sh 7
+Why: run 5 post-CTS `repair_timing -hold -hold_margin 0.5` inserted 4544 hold buffers (975 drive a flop D directly vs 86 in ungated r8; 4546 hold bufs vs 1231), hurting SS setup (-3.07) and implicated in LVS 330.
+LVS diagnosis (pd_5/runs/r5/72-netgen-lvs/reports/lvs.netgen.rpt): exactly 320 nets / 320 flop Q+D pin pairs mismatched (642 fragments); schematic has 320 more nets than layout; fragments hold only dffrnq Q/D, xor/aoi/oai, clkbuf_1 (hold) and antenna/I; only 2 touch an ICG. All cell-class counts equal. Looks like Q-net/D-net merging in a flop->hold-buffer->D pattern, not ICG. Diode count 17981 (vs 14651) not excluded: if run 7 still has LVS errors, run 8 = HEURISTIC_ANTENNA_THRESHOLD 150 (watch for the post-route antenna re-route crash).

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:busDefinition xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+	<ipxact:vendor>cryptoaccel_team_chipathon26</ipxact:vendor>
+	<ipxact:library>soc_lib</ipxact:library>
+	<ipxact:name>axi4lite</ipxact:name>
+	<ipxact:version>1.0</ipxact:version>
+	<ipxact:directConnection>true</ipxact:directConnection>
+	<ipxact:isAddressable>true</ipxact:isAddressable>
+	<ipxact:description>AXI4-Lite (subset used by this SoC)</ipxact:description>
+</ipxact:busDefinition>
